@@ -1,0 +1,11 @@
+PYTHON VERSION: >= 3.9
+
+------ DOWNLOAD DEPENDENCIES -----
+
+> pip install flask
+> pip install pandas
+
+------ RUN APPLICATION ------
+
+> set FLASK_APP=WebPage.py
+> flask run
