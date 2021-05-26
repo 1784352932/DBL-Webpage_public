@@ -1,0 +1,737 @@
+{
+    "matthew.lenhart@enron.com": {
+        "fromEmail": "matthew.lenhart@enron.com",
+        "toEmail": "tori.kuykendall@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "danny.mccarty@enron.com": {
+        "fromEmail": "danny.mccarty@enron.com",
+        "toEmail": "rod.hayslett@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "susan.scott@enron.com": {
+        "fromEmail": "susan.scott@enron.com",
+        "toEmail": "susan.scott@enron.com",
+        "sentiment": "0.0"
+    },
+    "andy.zipper@enron.com": {
+        "fromEmail": "andy.zipper@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "debra.perlingiere@enron.com": {
+        "fromEmail": "debra.perlingiere@enron.com",
+        "toEmail": "dan.hyvl@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "j.kaminski@enron.com": {
+        "fromEmail": "j.kaminski@enron.com",
+        "toEmail": "j.kaminski@enron.com",
+        "sentiment": "0.1506849315068493"
+    },
+    "mark.whitt@enron.com": {
+        "fromEmail": "mark.whitt@enron.com",
+        "toEmail": "barry.tycholiz@enron.com",
+        "sentiment": "0.2054794520547945"
+    },
+    "chris.germany@enron.com": {
+        "fromEmail": "chris.germany@enron.com",
+        "toEmail": "scott.hendrickson@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "dan.hyvl@enron.com": {
+        "fromEmail": "dan.hyvl@enron.com",
+        "toEmail": "stacy.dickson@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "phillip.k.ellen@enron.com": {
+        "fromEmail": "phillip.k.ellen@enron.com",
+        "toEmail": "keith.holst@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "carol.clair@enron.com": {
+        "fromEmail": "carol.clair@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0"
+    },
+    "kimberly.watson@enron.com": {
+        "fromEmail": "kimberly.watson@enron.com",
+        "toEmail": "steven.harris@enron.com",
+        "sentiment": "0.1232876712328767"
+    },
+    "elizabeth.sager@enron.com": {
+        "fromEmail": "elizabeth.sager@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "drew.fossum@enron.com": {
+        "fromEmail": "drew.fossum@enron.com",
+        "toEmail": "susan.scott@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "errol.mclaughlin@enron.com": {
+        "fromEmail": "errol.mclaughlin@enron.com",
+        "toEmail": "susan.scott@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "david.w.delainey@enron.com": {
+        "fromEmail": "david.w.delainey@enron.com",
+        "toEmail": "kevin.m.presto@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "lavorato@enron.com": {
+        "fromEmail": "lavorato@enron.com",
+        "toEmail": "david.w.delainey@enron.com",
+        "sentiment": "0.0"
+    },
+    "richard.b.sanders@enron.com": {
+        "fromEmail": "richard.b.sanders@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "0.0"
+    },
+    "jeff.dasovich@enron.com": {
+        "fromEmail": "jeff.dasovich@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "don.baughman@enron.com": {
+        "fromEmail": "don.baughman@enron.com",
+        "toEmail": "jeff.king@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "mark.e.taylor@enron.com": {
+        "fromEmail": "mark.e.taylor@enron.com",
+        "toEmail": "sara.shackleton@enron.com",
+        "sentiment": "0.0"
+    },
+    "stacey.w.white@enron.com": {
+        "fromEmail": "stacey.w.white@enron.com",
+        "toEmail": "charles.weldon@enron.com",
+        "sentiment": "0.0"
+    },
+    "richard.shapiro@enron.com": {
+        "fromEmail": "richard.shapiro@enron.com",
+        "toEmail": "steven.j.kean@enron.com",
+        "sentiment": "-0.2105263157894736"
+    },
+    "lynn.blair@enron.com": {
+        "fromEmail": "lynn.blair@enron.com",
+        "toEmail": "shelley.corman@enron.com",
+        "sentiment": "0.0"
+    },
+    "mike.grigsby@enron.com": {
+        "fromEmail": "mike.grigsby@enron.com",
+        "toEmail": "monique.sanchez@enron.com",
+        "sentiment": "0.1232876712328767"
+    },
+    "sara.shackleton@enron.com": {
+        "fromEmail": "sara.shackleton@enron.com",
+        "toEmail": "kim.ward@enron.com",
+        "sentiment": "0.0"
+    },
+    "tracy.geaccone@enron.com": {
+        "fromEmail": "tracy.geaccone@enron.com",
+        "toEmail": "steven.harris@enron.com",
+        "sentiment": "0.1095890410958904"
+    },
+    "kay.mann@enron.com": {
+        "fromEmail": "kay.mann@enron.com",
+        "toEmail": "kay.mann@enron.com",
+        "sentiment": "0.0"
+    },
+    "c..giron@enron.com": {
+        "fromEmail": "c..giron@enron.com",
+        "toEmail": "phillip.m.love@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "kim.ward@enron.com": {
+        "fromEmail": "kim.ward@enron.com",
+        "toEmail": "phillip.k.ellen@enron.com",
+        "sentiment": "0.0"
+    },
+    "monique.sanchez@enron.com": {
+        "fromEmail": "monique.sanchez@enron.com",
+        "toEmail": "dutch.quigley@enron.com",
+        "sentiment": "0.0"
+    },
+    "steven.j.kean@enron.com": {
+        "fromEmail": "steven.j.kean@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "-0.1578947368421053"
+    },
+    "louise.kitchen@enron.com": {
+        "fromEmail": "louise.kitchen@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "mark.mcconnell@enron.com": {
+        "fromEmail": "mark.mcconnell@enron.com",
+        "toEmail": "paul.y barbo@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "charles.weldon@enron.com": {
+        "fromEmail": "charles.weldon@enron.com",
+        "toEmail": "stacey.w.white@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "tana.jones@enron.com": {
+        "fromEmail": "tana.jones@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "jeffrey.a.shankman@enron.com": {
+        "fromEmail": "jeffrey.a.shankman@enron.com",
+        "toEmail": "rick.buy@enron.com",
+        "sentiment": "0.0"
+    },
+    "m..forney@enron.com": {
+        "fromEmail": "m..forney@enron.com",
+        "toEmail": "doug.gilbert-smith@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "kevin.m.presto@enron.com": {
+        "fromEmail": "kevin.m.presto@enron.com",
+        "toEmail": "mike.carson@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "barry.tycholiz@enron.com": {
+        "fromEmail": "barry.tycholiz@enron.com",
+        "toEmail": "mike.grigsby@enron.com",
+        "sentiment": "0.0"
+    },
+    "james.d.steffes@enron.com": {
+        "fromEmail": "james.d.steffes@enron.com",
+        "toEmail": "jeff.dasovich@enron.com",
+        "sentiment": "0.1780821917808219"
+    },
+    "rick.buy@enron.com": {
+        "fromEmail": "rick.buy@enron.com",
+        "toEmail": "louise.kitchen@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "jason.williams@enron.com": {
+        "fromEmail": "jason.williams@enron.com",
+        "toEmail": "kim.ward@enron.com",
+        "sentiment": "0.0"
+    },
+    "cara.semperger@enron.com": {
+        "fromEmail": "cara.semperger@enron.com",
+        "toEmail": "holden.salisbury@enron.com",
+        "sentiment": "0.0"
+    },
+    "gerald.nemec@enron.com": {
+        "fromEmail": "gerald.nemec@enron.com",
+        "toEmail": "mark.whitt@enron.com",
+        "sentiment": "0.0"
+    },
+    "richard.ring@enron.com": {
+        "fromEmail": "richard.ring@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "0.0"
+    },
+    "juan.hernandez@enron.com": {
+        "fromEmail": "juan.hernandez@enron.com",
+        "toEmail": "jeff.king@enron.com",
+        "sentiment": "0.0"
+    },
+    "paul.y barbo@enron.com": {
+        "fromEmail": "paul.y barbo@enron.com",
+        "toEmail": "steven.harris@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "bill.williams@enron.com": {
+        "fromEmail": "bill.williams@enron.com",
+        "toEmail": "geir.solberg@enron.com",
+        "sentiment": "-0.1052631578947369"
+    },
+    "stephanie.panus@enron.com": {
+        "fromEmail": "stephanie.panus@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "diana.scholtes@enron.com": {
+        "fromEmail": "diana.scholtes@enron.com",
+        "toEmail": "mary.hain@enron.com",
+        "sentiment": "0.0"
+    },
+    "e..haedicke@enron.com": {
+        "fromEmail": "e..haedicke@enron.com",
+        "toEmail": "mark.e.taylor@enron.com",
+        "sentiment": "0.0"
+    },
+    "john.arnold@enron.com": {
+        "fromEmail": "john.arnold@enron.com",
+        "toEmail": "fletcher.j.sturm@enron.com",
+        "sentiment": "0.0"
+    },
+    "martin.cuilla@enron.com": {
+        "fromEmail": "martin.cuilla@enron.com",
+        "toEmail": "eric.bass@enron.com",
+        "sentiment": "0.0"
+    },
+    "stacy.dickson@enron.com": {
+        "fromEmail": "stacy.dickson@enron.com",
+        "toEmail": "chris.germany@enron.com",
+        "sentiment": "0.0821917808219178"
+    },
+    "mary.hain@enron.com": {
+        "fromEmail": "mary.hain@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "jane.tholt@enron.com": {
+        "fromEmail": "jane.tholt@enron.com",
+        "toEmail": "barry.tycholiz@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "dutch.quigley@enron.com": {
+        "fromEmail": "dutch.quigley@enron.com",
+        "toEmail": "geoff.storey@enron.com",
+        "sentiment": "0.0"
+    },
+    "phillip.m.love@enron.com": {
+        "fromEmail": "phillip.m.love@enron.com",
+        "toEmail": "kam.keiser@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "marie.heard@enron.com": {
+        "fromEmail": "marie.heard@enron.com",
+        "toEmail": "stephanie.panus@enron.com",
+        "sentiment": "0.0"
+    },
+    "sean.crandall@enron.com": {
+        "fromEmail": "sean.crandall@enron.com",
+        "toEmail": "matt.motley@enron.com",
+        "sentiment": "0.0"
+    },
+    "daren.j.farmer@enron.com": {
+        "fromEmail": "daren.j.farmer@enron.com",
+        "toEmail": "eric.bass@enron.com",
+        "sentiment": "0.0"
+    },
+    "liz.taylor@enron.com": {
+        "fromEmail": "liz.taylor@enron.com",
+        "toEmail": "stanley.horton@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "scott.neal@enron.com": {
+        "fromEmail": "scott.neal@enron.com",
+        "toEmail": "thomas.a.martin@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "larry.f.campbell@enron.com": {
+        "fromEmail": "larry.f.campbell@enron.com",
+        "toEmail": "kevin.hyatt@enron.com",
+        "sentiment": "0.0"
+    },
+    "lindy.donoho@enron.com": {
+        "fromEmail": "lindy.donoho@enron.com",
+        "toEmail": "teb.lokey@enron.com",
+        "sentiment": "0.0"
+    },
+    "stanley.horton@enron.com": {
+        "fromEmail": "stanley.horton@enron.com",
+        "toEmail": "stanley.horton@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "susan.w.pereira@enron.com": {
+        "fromEmail": "susan.w.pereira@enron.com",
+        "toEmail": "jane.tholt@enron.com",
+        "sentiment": "0.0"
+    },
+    "kam.keiser@enron.com": {
+        "fromEmail": "kam.keiser@enron.com",
+        "toEmail": "john.hodge@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "hunter.s.shively@enron.com": {
+        "fromEmail": "hunter.s.shively@enron.com",
+        "toEmail": "kam.keiser@enron.com",
+        "sentiment": "0.0"
+    },
+    "rod.hayslett@enron.com": {
+        "fromEmail": "rod.hayslett@enron.com",
+        "toEmail": "tracy.geaccone@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "andrea.ring@enron.com": {
+        "fromEmail": "andrea.ring@enron.com",
+        "toEmail": "sandra.f.brawner@enron.com",
+        "sentiment": "0.0"
+    },
+    "kenneth.lay@enron.com": {
+        "fromEmail": "kenneth.lay@enron.com",
+        "toEmail": "michelle.cash@enron.com",
+        "sentiment": "0.0"
+    },
+    "kate.symes@enron.com": {
+        "fromEmail": "kate.symes@enron.com",
+        "toEmail": "cara.semperger@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "theresa.staab@enron.com": {
+        "fromEmail": "theresa.staab@enron.com",
+        "toEmail": "debra.perlingiere@enron.com",
+        "sentiment": "0.0"
+    },
+    "eric.bass@enron.com": {
+        "fromEmail": "eric.bass@enron.com",
+        "toEmail": "jim.schwieger@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "chris.dorland@enron.com": {
+        "fromEmail": "chris.dorland@enron.com",
+        "toEmail": "mike.carson@enron.com",
+        "sentiment": "0.0"
+    },
+    "paul.lucci@enron.com": {
+        "fromEmail": "paul.lucci@enron.com",
+        "toEmail": "mark.whitt@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "michelle.lokay@enron.com": {
+        "fromEmail": "michelle.lokay@enron.com",
+        "toEmail": "paul.y barbo@enron.com",
+        "sentiment": "0.0"
+    },
+    "paul.d.thomas@enron.com": {
+        "fromEmail": "paul.d.thomas@enron.com",
+        "toEmail": "paul.d.thomas@enron.com",
+        "sentiment": "0.0"
+    },
+    "shelley.corman@enron.com": {
+        "fromEmail": "shelley.corman@enron.com",
+        "toEmail": "shelley.corman@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "sally.beck@enron.com": {
+        "fromEmail": "sally.beck@enron.com",
+        "toEmail": "louise.kitchen@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "patrice.l.mims@enron.com": {
+        "fromEmail": "patrice.l.mims@enron.com",
+        "toEmail": "sandra.f.brawner@enron.com",
+        "sentiment": "0.0"
+    },
+    "eric.saibi@enron.com": {
+        "fromEmail": "eric.saibi@enron.com",
+        "toEmail": "tana.jones@enron.com",
+        "sentiment": "0.0"
+    },
+    "susan.bailey@enron.com": {
+        "fromEmail": "susan.bailey@enron.com",
+        "toEmail": "stephanie.panus@enron.com",
+        "sentiment": "0.0"
+    },
+    "larry.may@enron.com": {
+        "fromEmail": "larry.may@enron.com",
+        "toEmail": "peter.keavey@enron.com",
+        "sentiment": "0.0684931506849315"
+    },
+    "holden.salisbury@enron.com": {
+        "fromEmail": "holden.salisbury@enron.com",
+        "toEmail": "lisa.gang@enron.com",
+        "sentiment": "0.0"
+    },
+    "monika.causholli@enron.com": {
+        "fromEmail": "monika.causholli@enron.com",
+        "toEmail": "mark.guzman@enron.com",
+        "sentiment": "0.0"
+    },
+    "darrell.schoolcraft@enron.com": {
+        "fromEmail": "darrell.schoolcraft@enron.com",
+        "toEmail": "lynn.blair@enron.com",
+        "sentiment": "0.0"
+    },
+    "jonathan.mckay@enron.com": {
+        "fromEmail": "jonathan.mckay@enron.com",
+        "toEmail": "martin.cuilla@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "harry.arora@enron.com": {
+        "fromEmail": "harry.arora@enron.com",
+        "toEmail": "stacey.w.white@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "greg.whalley@enron.com": {
+        "fromEmail": "greg.whalley@enron.com",
+        "toEmail": "andy.zipper@enron.com",
+        "sentiment": "0.0"
+    },
+    "john.hodge@enron.com": {
+        "fromEmail": "john.hodge@enron.com",
+        "toEmail": "gerald.nemec@enron.com",
+        "sentiment": "0.0"
+    },
+    "michelle.cash@enron.com": {
+        "fromEmail": "michelle.cash@enron.com",
+        "toEmail": "michelle.cash@enron.com",
+        "sentiment": "0.0"
+    },
+    "vladi.pimenov@enron.com": {
+        "fromEmail": "vladi.pimenov@enron.com",
+        "toEmail": "jonathan.mckay@enron.com",
+        "sentiment": "0.0"
+    },
+    "thomas.a.martin@enron.com": {
+        "fromEmail": "thomas.a.martin@enron.com",
+        "toEmail": "jim.schwieger@enron.com",
+        "sentiment": "0.0"
+    },
+    "sandra.f.brawner@enron.com": {
+        "fromEmail": "sandra.f.brawner@enron.com",
+        "toEmail": "scott.neal@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "steven.harris@enron.com": {
+        "fromEmail": "steven.harris@enron.com",
+        "toEmail": "susan.scott@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "jim.schwieger@enron.com": {
+        "fromEmail": "jim.schwieger@enron.com",
+        "toEmail": "kim.ward@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "tori.kuykendall@enron.com": {
+        "fromEmail": "tori.kuykendall@enron.com",
+        "toEmail": "matthew.lenhart@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "peter.keavey@enron.com": {
+        "fromEmail": "peter.keavey@enron.com",
+        "toEmail": "john.arnold@enron.com",
+        "sentiment": "0.0"
+    },
+    "john.griffith@enron.com": {
+        "fromEmail": "john.griffith@enron.com",
+        "toEmail": "jonathan.mckay@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "john.zufferli@enron.com": {
+        "fromEmail": "john.zufferli@enron.com",
+        "toEmail": "chris.dorland@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "joe.stepenovitch@enron.com": {
+        "fromEmail": "joe.stepenovitch@enron.com",
+        "toEmail": "larry.f.campbell@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "bill.rapp@enron.com": {
+        "fromEmail": "bill.rapp@enron.com",
+        "toEmail": "drew.fossum@enron.com",
+        "sentiment": "0.0"
+    },
+    "steven.p.south@enron.com": {
+        "fromEmail": "steven.p.south@enron.com",
+        "toEmail": "susan.scott@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "kevin.hyatt@enron.com": {
+        "fromEmail": "kevin.hyatt@enron.com",
+        "toEmail": "steven.harris@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "kevin.ruscitti@enron.com": {
+        "fromEmail": "kevin.ruscitti@enron.com",
+        "toEmail": "h..lewis@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "lisa.gang@enron.com": {
+        "fromEmail": "lisa.gang@enron.com",
+        "toEmail": "holden.salisbury@enron.com",
+        "sentiment": "0.0"
+    },
+    "fletcher.j.sturm@enron.com": {
+        "fromEmail": "fletcher.j.sturm@enron.com",
+        "toEmail": "hunter.s.shively@enron.com",
+        "sentiment": "0.0"
+    },
+    "dana.davis@enron.com": {
+        "fromEmail": "dana.davis@enron.com",
+        "toEmail": "dana.davis@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "robin.rodrigue@enron.com": {
+        "fromEmail": "robin.rodrigue@enron.com",
+        "toEmail": "kam.keiser@enron.com",
+        "sentiment": "0.0"
+    },
+    "jay.reitmeyer@enron.com": {
+        "fromEmail": "jay.reitmeyer@enron.com",
+        "toEmail": "frank.ermis@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "geir.solberg@enron.com": {
+        "fromEmail": "geir.solberg@enron.com",
+        "toEmail": "ryan.slinger@enron.com",
+        "sentiment": "0.0"
+    },
+    "joe.parks@enron.com": {
+        "fromEmail": "joe.parks@enron.com",
+        "toEmail": "eric.bass@enron.com",
+        "sentiment": "0.0"
+    },
+    "jason.wolfe@enron.com": {
+        "fromEmail": "jason.wolfe@enron.com",
+        "toEmail": "kim.ward@enron.com",
+        "sentiment": "0.0"
+    },
+    "h..lewis@enron.com": {
+        "fromEmail": "h..lewis@enron.com",
+        "toEmail": "hunter.s.shively@enron.com",
+        "sentiment": "0.0"
+    },
+    "doug.gilbert-smith@enron.com": {
+        "fromEmail": "doug.gilbert-smith@enron.com",
+        "toEmail": "m..forney@enron.com",
+        "sentiment": "0.0"
+    },
+    "frank.ermis@enron.com": {
+        "fromEmail": "frank.ermis@enron.com",
+        "toEmail": "jay.reitmeyer@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "teb.lokey@enron.com": {
+        "fromEmail": "teb.lokey@enron.com",
+        "toEmail": "bill.rapp@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "james.derrick@enron.com": {
+        "fromEmail": "james.derrick@enron.com",
+        "toEmail": "richard.b.sanders@enron.com",
+        "sentiment": "0.0273972602739726"
+    },
+    "matt.smith@enron.com": {
+        "fromEmail": "matt.smith@enron.com",
+        "toEmail": "keith.holst@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "mike.swerzbin@enron.com": {
+        "fromEmail": "mike.swerzbin@enron.com",
+        "toEmail": "kevin.m.presto@enron.com",
+        "sentiment": "0.0"
+    },
+    "benjamin.rogers@enron.com": {
+        "fromEmail": "benjamin.rogers@enron.com",
+        "toEmail": "david.w.delainey@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "jeff.skilling@enron.com": {
+        "fromEmail": "jeff.skilling@enron.com",
+        "toEmail": "rod.hayslett@enron.com",
+        "sentiment": "0.0410958904109589"
+    },
+    "mark.guzman@enron.com": {
+        "fromEmail": "mark.guzman@enron.com",
+        "toEmail": "kate.symes@enron.com",
+        "sentiment": "0.0547945205479452"
+    },
+    "scott.hendrickson@enron.com": {
+        "fromEmail": "scott.hendrickson@enron.com",
+        "toEmail": "chris.germany@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "mike.carson@enron.com": {
+        "fromEmail": "mike.carson@enron.com",
+        "toEmail": "jeff.king@enron.com",
+        "sentiment": "0.0"
+    },
+    "geoff.storey@enron.com": {
+        "fromEmail": "geoff.storey@enron.com",
+        "toEmail": "phillip.m.love@enron.com",
+        "sentiment": "0.0"
+    },
+    "albert.meyers@enron.com": {
+        "fromEmail": "albert.meyers@enron.com",
+        "toEmail": "bill.williams@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "robert.badeer@enron.com": {
+        "fromEmail": "robert.badeer@enron.com",
+        "toEmail": "jeff.dasovich@enron.com",
+        "sentiment": "-0.0526315789473684"
+    },
+    "ryan.slinger@enron.com": {
+        "fromEmail": "ryan.slinger@enron.com",
+        "toEmail": "mark.guzman@enron.com",
+        "sentiment": "0.0"
+    },
+    "phillip.platter@enron.com": {
+        "fromEmail": "phillip.platter@enron.com",
+        "toEmail": "m..forney@enron.com",
+        "sentiment": "0.0821917808219178"
+    },
+    "jeff.king@enron.com": {
+        "fromEmail": "jeff.king@enron.com",
+        "toEmail": "joe.quenet@enron.com",
+        "sentiment": "0.0684931506849315"
+    },
+    "judy.townsend@enron.com": {
+        "fromEmail": "judy.townsend@enron.com",
+        "toEmail": "chris.germany@enron.com",
+        "sentiment": "0.0"
+    },
+    "l..gay@enron.com": {
+        "fromEmail": "l..gay@enron.com",
+        "toEmail": "matthew.lenhart@enron.com",
+        "sentiment": "-1.0"
+    },
+    "matt.motley@enron.com": {
+        "fromEmail": "matt.motley@enron.com",
+        "toEmail": "mike.swerzbin@enron.com",
+        "sentiment": "0.0"
+    },
+    "tom.donohoe@enron.com": {
+        "fromEmail": "tom.donohoe@enron.com",
+        "toEmail": "kenneth.lay@enron.com",
+        "sentiment": "-0.1578947368421053"
+    },
+    "keith.holst@enron.com": {
+        "fromEmail": "keith.holst@enron.com",
+        "toEmail": "mike.grigsby@enron.com",
+        "sentiment": "0.136986301369863"
+    },
+    "joe.quenet@enron.com": {
+        "fromEmail": "joe.quenet@enron.com",
+        "toEmail": "robert.benson@enron.com",
+        "sentiment": "0.0"
+    },
+    "mike.maggi@enron.com": {
+        "fromEmail": "mike.maggi@enron.com",
+        "toEmail": "john.arnold@enron.com",
+        "sentiment": "0.0"
+    },
+    "mary.fischer@enron.com": {
+        "fromEmail": "mary.fischer@enron.com",
+        "toEmail": "mary.fischer@enron.com",
+        "sentiment": "0.0"
+    },
+    "robert.benson@enron.com": {
+        "fromEmail": "robert.benson@enron.com",
+        "toEmail": "kevin.m.presto@enron.com",
+        "sentiment": "0.0684931506849315"
+    },
+    "chris.stokley@enron.com": {
+        "fromEmail": "chris.stokley@enron.com",
+        "toEmail": "james.d.steffes@enron.com",
+        "sentiment": "0.0"
+    },
+    "craig.dean@enron.com": {
+        "fromEmail": "craig.dean@enron.com",
+        "toEmail": "holden.salisbury@enron.com",
+        "sentiment": "0.0"
+    },
+    "cooper.richey@enron.com": {
+        "fromEmail": "cooper.richey@enron.com",
+        "toEmail": "jane.tholt@enron.com",
+        "sentiment": "0.0136986301369863"
+    },
+    "brad.mckay@enron.com": {
+        "fromEmail": "brad.mckay@enron.com",
+        "toEmail": "larry.may@enron.com",
+        "sentiment": "0.0"
+    }
+}
