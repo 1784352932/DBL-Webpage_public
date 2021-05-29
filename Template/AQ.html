@@ -4,7 +4,7 @@
   DBL-Webtech Group 12BC Visualizations
 </title>
 <div>
-  <form class="" action="javascript:void(0);" method="post" enctype="multipart/form-data">
+  <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
     <input type="file" id='csv-file' name="csvfile" value=""; style="padding-left: 1em;">
     <input type="submit" name="" value="Submit"; style="padding-left: 1em;" onclick="displayVisualization()">
   </form>
@@ -41,7 +41,24 @@
   </p>
   <svg width="1500" height="800"></svg>
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
+  $(document).ready(function(e){
+    // Submit form data via Ajax
+    $("#upload-form").on('submit', function(e){
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '/visualizations/',
+            data: new FormData(this),
+            dataType: 'file',
+            contentType: false,
+            cache: false,
+            processData:false
+        });
+    });
+  });
+
   function displayVisualization(){
     let filename = document.getElementById('csv-file').value.split("\\").pop();
 
@@ -130,29 +147,29 @@
           })
       }
     });
-  }
 
-  function dragstarted(d) {
-    if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-    d.fx = d.x;
-    d.fy = d.y;
-  }
+    function dragstarted(d) {
+        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+        d.fx = d.x;
+        d.fy = d.y;
+    }
 
-  function dragged(d) {
-    d.fx = d3.event.x;
-    d.fy = d3.event.y;
-  }
+    function dragged(d) {
+      d.fx = d3.event.x;
+      d.fy = d3.event.y;
+    }
 
-  function dragended(d) {
-    if (!d3.event.active) simulation.alphaTarget(0);
-    d.fx = null;
-    d.fy = null;
-  }
+    function dragended(d) {
+      if (!d3.event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
 
-  var mouseover = function x(d) {
-    d3.select(this)
-      .style("stroke", "grey")
-      .style("opacity", 10)
+    var mouseover = function x(d) {
+      d3.select(this)
+        .style("stroke", "grey")
+        .style("opacity", 10)
+    }
   }
   </script>
 
