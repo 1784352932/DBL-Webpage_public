@@ -59,7 +59,7 @@ def visulizations():
      
       return  render_template("AQ.html")
     
-    return render_template("AQ.html", message = "Pleas upload a csv file that is related to the Enron")
+    return render_template("AQ.html", message = "Please upload a csv file that is related to the Enron")
 
 
 #Root for the json files
