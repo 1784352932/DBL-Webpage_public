@@ -60,10 +60,10 @@ def visulizations():
       fd_format.writeToFile(data)
 
       heatmap_format = Heatmap()
-      heatmap_format.writeToFile_Heatmap(data)
+      heatmap_format.writeToFile(data)
 
       PieChart_format = PieChart()
-      PieChart_format.writeToFile_PieChart(data)
+      PieChart_format.writeToFile(data)
      
      
       return  render_template("AQ.html")
@@ -72,7 +72,7 @@ def visulizations():
 
 
 #Root for the json files
-@app.route('/visualizations/<filename>.csv', methods = ['GET', 'POST'])
+@app.route('/visualizations/<filename>', methods = ['GET', 'POST'])
 def Enron_anyfile(filename):
    #check if the file exists
 
