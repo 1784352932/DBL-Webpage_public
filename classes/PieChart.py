@@ -10,7 +10,7 @@ class PieChart(JsonFormat):
         PieChart_format = self.schema
 
         for key in data:
-            PieChart_format['variables'].append({'fromEmail': data[key][0]["fromEmail"],
+            PieChart_format['variables_PieChart'].append({'fromEmail': data[key][0]["fromEmail"],
                 'toEmail': data[key][0]["toEmail"], 'sentiment': data[key][0]["sentiment"]})
                 
         
