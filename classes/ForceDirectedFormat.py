@@ -10,12 +10,13 @@ class ForceDirectedFormat(JsonFormat):
         data_fd_graph = self.schema
 
         for key in data:
-            data_fd_graph['nodes'].append({'id': key, 'fromJobtitle': data[key][0]["fromJobtitle"],
-                'toJobtitle': data[key][0]["toJobtitle"]})
+            data_fd_graph['nodes'].append({'id': key, 'group': data[key][0]["fromJobtitle"]})
                 
             for item in data[key]:
                 data_fd_graph['links'].append({'source': item['fromEmail'], 'target': item['toEmail'], 'sentiment': item['sentiment']})
-        
+                if ({'id': item['toEmail'], 'group': item['toJobtitle']} not in data_fd_graph['nodes']):
+                    data_fd_graph['nodes'].append({'id': item['toEmail'], 'group': item["toJobtitle"]})
+
         with open(self.filepath, "w") as jsonFile:
             jsonFile.write(json.dumps(data_fd_graph, indent=6))
       
