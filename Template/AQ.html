@@ -6,7 +6,12 @@
   <style>
     .container {
       display: flex;
+      justify-content: space-evenly;
+    }
 
+    .selection-container{
+      display: flex;
+      justify-content: space-evenly;
     }
 
     .horizontal_div {
@@ -15,7 +20,6 @@
       border: 1px black;
       background: white;
       margin: 5px;
-      /*margin-top:5px;*/
     }
 
     .links line {
@@ -46,29 +50,41 @@
 
   <main>
     <div>
-      <p style="padding-left: 1em;">
+      <p style="text-align: center;">
         {{message}}
       </p>
-      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
-        <input type="file" id='csv-file' name="csvfile" value="" ; style="padding-left: 1em;">
-        <input type="submit" name="" value="Submit" ; style="padding-left: 1em;" onclick="displayVisualization()">
+      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data"; style="text-align: center;">
+        <input type="file" id='csv-file' name="csvfile" value="" ; style="text-align:center">
+        <input type="submit" name="" value="Submit" ; style="text-align: center;"; onclick="displayVisualization()">
       </form>
     </div>
+  </br>
+    <div class="selection-container" style="padding-left: 1em;">
+      <select class="form-select" aria-label="Default select example" id="selection-1">
+        <option selected>Please choose a visualization to be displayed</option>
+        <option value="1">Pie Chart</option>
+        <option value="2">Force Directed Graph</option>
+        <option value="3">Heat Map</option>
+      </select>
 
+      <select class="form-select" aria-label="Default select example" id="selection-2">
+        <option selected>Please choose a visualization to be displayed</option>
+        <option value="1">Pie Chart</option>
+        <option value="2">Force Directed Graph</option>
+        <option value="3">Heat Map</option>
+      </select>
+    </div>
     </br>
     <div class="container">
-      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; class="horizontal_div">
+      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
         <svg width="800" height="800">
         </svg>
       </div>
-
-      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; class="horizontal_div">
+      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
         <svg width="800" height="800">
         </svg>
       </div>
     </div>
-
-
 
   </main>
 
