@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 
-<title>
-  DBL-Webtech Group 12BC Visualizations
-</title>
-
-
-
-<header>
-  <h1 style="text-align:center; font-size: 300%; color: crimson;"> Visualizations </h1>
-</header>
-<meta charset="utf-8">
-
-<main>
-  <div>
-    <p style="padding-left: 1em;">
-      {{message}}
-    </p>
-    <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
-      <input type="file" id='csv-file' name="csvfile" value="" ; style="padding-left: 1em;">
-      <input type="submit" name="" value="Submit" ; style="padding-left: 1em;" onclick="displayVisualization()">
-    </form>
-  </div>
-</main>
-
-<body>
+<head>
+  <meta charset="utf-8">
 
   <style>
+    .container {
+      display: flex;
+
+    }
+
+    .horizontal_div {
+      width: 800px;
+      height: 800px;
+      border: 1px black;
+      background: white;
+      margin: 5px;
+      /*margin-top:5px;*/
+    }
+
     .links line {
       stroke: rgb(0, 0, 0);
       stroke-opacity: 0.6;
@@ -41,8 +33,46 @@
       font-size: 10px;
     }
   </style>
+</head>
 
-  <svg width="1800" height="800"></svg>
+<body>
+  <title>
+    DBL-Webtech Group 12BC Visualizations
+  </title>
+
+  <header>
+    <h1 style="text-align:center; font-size: 300%; color: crimson;"> Visualizations </h1>
+  </header>
+
+  <main>
+    <div>
+      <p style="padding-left: 1em;">
+        {{message}}
+      </p>
+      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
+        <input type="file" id='csv-file' name="csvfile" value="" ; style="padding-left: 1em;">
+        <input type="submit" name="" value="Submit" ; style="padding-left: 1em;" onclick="displayVisualization()">
+      </form>
+    </div>
+
+    </br>
+    <div class="container">
+      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; class="horizontal_div">
+        <svg width="800" height="800">
+        </svg>
+      </div>
+
+      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; class="horizontal_div">
+        <svg width="800" height="800">
+        </svg>
+      </div>
+    </div>
+
+
+
+  </main>
+
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
@@ -97,8 +127,8 @@
           .data(graph.nodes)
           .enter().append("circle")
           .attr("r", 5)
-          .attr("fill", function (d) { 
-            return color(d.group); 
+          .attr("fill", function (d) {
+            return color(d.group);
           })
           .call(d3.drag()
             .on("start", dragstarted)
@@ -166,5 +196,6 @@
 
     }
   </script>
+
 
 </body>
