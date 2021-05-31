@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Heatmap Visuilization</title>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
+    <style>
+      html, body, #container {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+        anychart.onDocumentReady(function () {
+  
+          // create the data 
+          var data = [
+            { x: "matthew.lenhart@enron.com", y: "eric.bass@enron.com", heat: 0.0136986301369863  },
+
+          ];        
+          
+          // create the chart and set the data
+          chart = anychart.heatMap(data);
+          
+          // set the chart title
+          chart.title("Sentiment Index by Email of Enron");
+          
+          // create and configure the color scale.
+          var customColorScale = anychart.scales.linearColor();
+          customColorScale.colors(["#ACE8D4", "#00726A"]);
+          
+          // set the color scale as the color scale of the chart
+          chart.colorScale(customColorScale);
+          
+          // set the container id
+          chart.container("container");
+          
+          // initiate drawing the chart
+          chart.draw();
+          
+        });
+      </script>
+  </body>
+</html>
