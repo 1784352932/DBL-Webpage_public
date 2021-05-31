@@ -4,6 +4,8 @@ import pandas as pd
 import csv
 import os
 from Classes.ForceDirectedFormat import ForceDirectedFormat
+from Classes.Heatmap import Heatmap
+from Classes.PieChart import PieChart
 
 from pandas.core.base import DataError
 
@@ -56,6 +58,13 @@ def visulizations():
 
       fd_format = ForceDirectedFormat()
       fd_format.writeToFile(data)
+
+      heatmap_format = Heatmap()
+      heatmap_format.writeToFile_Heatmap(data)
+
+      PieChart_format = PieChart()
+      PieChart_format.writeToFile_PieChart(data)
+     
      
       return  render_template("AQ.html")
     
