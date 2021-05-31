@@ -62,14 +62,16 @@
     </br>
     </br>
     <div class="selection-container" style="padding-left: 1em;">
-      <select class="form-select" aria-label="Default select example" id="selection-1"  onchange="displayVisualization(this.value)">
+      <select class="form-select" aria-label="Default select example" id="selection-1"
+        onchange="displayVisualization(this.value, '1')">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
         <option value="3">Heat Map</option>
       </select>
 
-      <select class="form-select-2" aria-label="Default select example" id="selection-2">
+      <select class="form-select-2" aria-label="Default select example" id="selection-2"
+        onchange="displayVisualization(this.value, '2')">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
@@ -78,12 +80,13 @@
     </div>
     </br>
     <div class="container">
+
       <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <svg width="800" height="800">
+        <svg width="800" height="800" id="svg-1">
         </svg>
       </div>
       <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <svg width="800" height="800">
+        <svg width="800" height="800" id="svg-2">
         </svg>
       </div>
     </div>
@@ -110,14 +113,15 @@
       });
     });
 
-    function displayVisualization(value) {
-      if (value === '2'){
-        ForceDirectedGraph();
+    function displayVisualization(value, svgId) {
+      if (value === '2') {
+        ForceDirectedGraph(svgId)
       }
     }
-    function ForceDirectedGraph() {
+
+    function ForceDirectedGraph(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select("svg"),
+      var svg = d3.select(`#svg-${svgId}`),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
