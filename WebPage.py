@@ -6,7 +6,6 @@ import os
 from Classes.ForceDirectedFormat import ForceDirectedFormat
 from Classes.Heatmap import Heatmap
 from Classes.PieChart import PieChart
-
 from pandas.core.base import DataError
 
 
@@ -20,18 +19,6 @@ app =Flask(__name__,template_folder= "Template")
 def homepage():
    return render_template("Base.html")
 
-
-#Root for the datasets page
-@app.route('/data')
-def data():
-    filename = './static/enron-v1.csv'
-    data = pd.read_csv(filename, header=0)
-    myData = list(data.values)
-    
-    return render_template('data.html', myData=myData)
-
-
-   
 
 #Root for the visualizations page
 @app.route('/visualizations/', methods = ['GET', 'POST'])
