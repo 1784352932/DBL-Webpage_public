@@ -62,14 +62,14 @@
     </br>
     </br>
     <div class="selection-container" style="padding-left: 1em;">
-      <select class="form-select" aria-label="Default select example" id="selection-1"  onchange="displayVisualization(this.selectedIndex)">
+      <select class="form-select" aria-label="Default select example" id="selection-1"  onchange="displayVisualization(this.value)">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
         <option value="3">Heat Map</option>
       </select>
 
-      <select class="form-select" aria-label="Default select example" id="selection-2">
+      <select class="form-select-2" aria-label="Default select example" id="selection-2">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
@@ -110,8 +110,8 @@
       });
     });
 
-    function displayVisualization(selectedIndex) {
-      if (selectedIndex === '2'){
+    function displayVisualization(value) {
+      if (value === '2'){
         ForceDirectedGraph();
       }
     }
