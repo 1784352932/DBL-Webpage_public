@@ -9,7 +9,7 @@
       justify-content: space-evenly;
     }
 
-    .selection-container{
+    .selection-container {
       display: flex;
       justify-content: space-evenly;
     }
@@ -53,14 +53,16 @@
       <p style="text-align: center;">
         {{message}}
       </p>
-      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data"; style="text-align: center;">
+      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data" ;
+        style="text-align: center;">
         <input type="file" id='csv-file' name="csvfile" value="" ; style="text-align:center">
-        <input type="submit" name="" value="Submit" ; style="text-align: center;"; onclick="displayVisualization()">
+        <input type="submit" name="" value="Submit" ; style="text-align: center;">
       </form>
     </div>
-  </br>
+    </br>
+    </br>
     <div class="selection-container" style="padding-left: 1em;">
-      <select class="form-select" aria-label="Default select example" id="selection-1">
+      <select class="form-select" aria-label="Default select example" id="selection-1"  onchange="displayVisualization(this.selectedIndex)">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
@@ -108,9 +110,13 @@
       });
     });
 
-    function displayVisualization() {
+    function displayVisualization(selectedIndex) {
+      if (selectedIndex === '2'){
+        ForceDirectedGraph();
+      }
+    }
+    function ForceDirectedGraph() {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-
       var svg = d3.select("svg"),
         width = +svg.attr("width"),
         height = +svg.attr("height");
@@ -209,7 +215,6 @@
         d.fx = null;
         d.fy = null;
       }
-
     }
   </script>
 
