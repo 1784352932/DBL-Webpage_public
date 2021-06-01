@@ -4,14 +4,15 @@ from pathlib import Path
 
 class PieChart(JsonFormat):
     def __init__(self):
-        super().__init__({'variables_PieChart': []}, "C:\\Users\\20201077\\Desktop\\Doruk Güngör\\Eindhoven\\Computer Science\\Year 1\\Q4\\DBL-Webtech\\Phyton\\Template\\pie_chart.json")
+        super().__init__([], "C:\\Users\\20201077\\Desktop\\Doruk Güngör\\Eindhoven\\Computer Science\\Year 1\\Q4\\DBL-Webtech\\Phyton\\Template\\pie_chart.json")
 
     def writeToFile(self, data):
         PieChart_format = self.schema
 
         for key in data:
-            PieChart_format['variables_PieChart'].append({'fromEmail': data[key][0]["fromEmail"],
-                'toEmail': data[key][0]["toEmail"], 'sentiment': data[key][0]["sentiment"]})
+            PieChart_format.append({'fromEmail': data[key][0]["fromEmail"],
+                'toEmail': data[key][0]["toEmail"], 'fromJobtitle': data[key][0]["fromJobtitle"], 
+                'toJobtitle': data[key][0]["toJobtitle"]})
                 
         
         with open(self.filepath, "w") as jsonFile:
