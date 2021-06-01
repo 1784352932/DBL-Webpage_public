@@ -144,11 +144,11 @@
 
       <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
         <div class="highcharts-figure">
-          <div id="container"></div>
+          <div id="container-1"></div>
             <p class="highcharts-description">
             </p>
   
-            <div id="container1"></div>
+            <div id="container1-1"></div>
             <p class="highcharts-description">
             </p>
           <svg width="800" height="800" id="svg-1">
@@ -157,11 +157,11 @@
       </div>
       <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
         <div class="highcharts-figure">
-          <div id="container"></div>
+          <div id="container-2"></div>
             <p class="highcharts-description">
             </p>
   
-            <div id="container1"></div>
+            <div id="container1-2"></div>
             <p class="highcharts-description">
             </p>
           <svg width="800" height="800" id="svg-2">
@@ -201,7 +201,7 @@
 
     function ForceDirectedGraph(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`),
+      var svg = d3.select(`#svg-${svgId}`).html(""),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
@@ -303,11 +303,10 @@
 
     function PieChart(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`);
-      var data = svg.append("g");
+
       //fetch csv dosyasini okumamizi saglar
       fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
-        data = res;
+        let data = res;
         //okudugumuz veriden sadece from jobtitle lari aliyoruz 
         let jobtitle = data.map((x) => {
           return x.fromJobtitle
@@ -328,15 +327,15 @@
 
           }
         }
-        createchart(formated);
+        createchart(formated, svgId);
         const list = document.getElementsByClassName('highcharts-figure');
         list[0].style.display = "hidden"
         console.log(jobtitle)
         console.log(list)
       })
 
-      function createchart(formated) {
-        Highcharts.chart('container', {
+      function createchart(formated, containerId) {
+        Highcharts.chart(`container-${containerId}`, {
           chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
@@ -378,12 +377,8 @@
                       const element = jobtitle[key];
                       const count = title.filter(x => x.toJobtitle === element).length;
                       const percentage = parseFloat(count / title.length).toFixed(4) * 100;
-                      formated.push({ name: element, y: percentage })
-
-
+                      formated.push({ name: element, y: percentage });
                       console.log(percentage);
-
-
                     }
                   }
                   console.log(title)
