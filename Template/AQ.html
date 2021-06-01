@@ -201,7 +201,7 @@
 
     function ForceDirectedGraph(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`).html(""),
+      var svg = d3.select(`#svg-${svgId}`),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
@@ -304,9 +304,11 @@
     function PieChart(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
 
+      var data;
+
       //fetch csv dosyasini okumamizi saglar
       fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
-        let data = res;
+        data = res;
         //okudugumuz veriden sadece from jobtitle lari aliyoruz 
         let jobtitle = data.map((x) => {
           return x.fromJobtitle
@@ -382,7 +384,7 @@
                     }
                   }
                   console.log(title)
-                  createchart1(formated)
+                  createchart1(formated, containerId)
                 }
               },
             },
@@ -395,8 +397,8 @@
           }]
         });
       }
-      function createchart1(formated) {
-        Highcharts.chart('container1', {
+      function createchart1(formated, containerId) {
+        Highcharts.chart(`container1-${containerId}`, {
           chart: {
             plotBackgroundColor: null,
             plotBorderWidth: null,
