@@ -201,7 +201,7 @@
 
     function ForceDirectedGraph(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`).html(""),
+      var svg = d3.select(`#svg-${svgId}`),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
