@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
 <head>
   <meta charset="utf-8">
@@ -23,7 +23,7 @@
     }
 
     .links line {
-      stroke: rgb(0, 0, 0);
+      stroke: rgb(8, 8, 8);
       stroke-opacity: 0.6;
     }
 
@@ -36,7 +36,68 @@
       font-family: sans-serif;
       font-size: 10px;
     }
+
+    .highcharts-figure,
+    .highcharts-data-table table {
+      min-width: 320px;
+      max-width: 800px;
+      margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #EBEBEB;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .highcharts-data-table caption {
+      padding: 1em 0;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .highcharts-data-table th {
+      font-weight: 600;
+      padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+      padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+      background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+      background: #f1f7ff;
+    }
+
+
+    input[type="number"] {
+      min-width: 50px;
+    }
+
+    .highcharts-credits {
+      display: hidden !important;
+    }
   </style>
+
+  <!-- dependencies for front-end visualization -->
+  
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 </head>
 
 <body>
@@ -81,21 +142,36 @@
     </br>
     <div class="container">
 
-      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <svg width="800" height="800" id="svg-1">
-        </svg>
+      <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+        <div class="highcharts-figure">
+          <div id="container"></div>
+            <p class="highcharts-description">
+            </p>
+  
+            <div id="container1"></div>
+            <p class="highcharts-description">
+            </p>
+          <svg width="800" height="800" id="svg-1">
+          </svg>
+        </div>
       </div>
-      <div style="width: 800px;height: 800px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <svg width="800" height="800" id="svg-2">
-        </svg>
+      <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+        <div class="highcharts-figure">
+          <div id="container"></div>
+            <p class="highcharts-description">
+            </p>
+  
+            <div id="container1"></div>
+            <p class="highcharts-description">
+            </p>
+          <svg width="800" height="800" id="svg-2">
+          </svg>
+        </div>
       </div>
     </div>
 
   </main>
 
-
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function (e) {
       // Submit form data via Ajax
@@ -114,14 +190,18 @@
     });
 
     function displayVisualization(value, svgId) {
-      if (value === '2') {
+      if (value === '2' && value !== '1') {
         ForceDirectedGraph(svgId)
       }
+      if (value === '1' && value !== '2') {
+        PieChart(svgId)
+      }
+
     }
 
     function ForceDirectedGraph(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`),
+      var svg = d3.select(`#svg-${svgId}`).html(""),
         width = +svg.attr("width"),
         height = +svg.attr("height");
 
@@ -135,7 +215,7 @@
         .force("charge", d3.forceManyBody())
         .force("center", d3.forceCenter(width / 2, height / 2));
 
-      d3.json("/visualizations/example", function (error, graph) {
+      d3.json("/visualizations/ForcedDirectedGraph", function (error, graph) {
         if (error) throw error;
 
         var link = svg.append("g")
@@ -219,6 +299,147 @@
         d.fx = null;
         d.fy = null;
       }
+    }
+
+    function PieChart(svgId) {
+      let filename = document.getElementById('csv-file').value.split("\\").pop();
+      var svg = d3.select(`#svg-${svgId}`);
+      var data = svg.append("g");
+      //fetch csv dosyasini okumamizi saglar
+      fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
+        data = res;
+        //okudugumuz veriden sadece from jobtitle lari aliyoruz 
+        let jobtitle = data.map((x) => {
+          return x.fromJobtitle
+        })
+        //elimizde kac farkli jobtitle var 
+        jobtitle = [...new Set(jobtitle)]
+        let formated = []
+        //her bir jobtitle icin yuzde hesaplanir ve bu yuzdeler formated degiskenine atilir 
+        for (const key in jobtitle) {
+          if (Object.hasOwnProperty.call(jobtitle, key)) {
+            const element = jobtitle[key];
+            const count = data.filter(x => x.fromJobtitle === element).length;
+            const percentage = parseFloat(count / data.length).toFixed(4) * 100;
+            formated.push({ name: element, y: percentage })
+
+            console.log(percentage);
+
+
+          }
+        }
+        createchart(formated);
+        const list = document.getElementsByClassName('highcharts-figure');
+        list[0].style.display = "hidden"
+        console.log(jobtitle)
+        console.log(list)
+      })
+
+      function createchart(formated) {
+        Highcharts.chart('container', {
+          chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+          },
+
+          title: {
+            text: 'Percentage of email send from JobTitles'
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          accessibility: {
+            point: {
+              valueSuffix: '%'
+            }
+          },
+          plotOptions: {
+            pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+              }
+            },
+            series: {
+              events: {
+                click: function (event) {
+                  let title = data.filter(x => x.fromJobtitle === event.point.name)
+                  let jobtitle = title.map((x) => {
+                    return x.toJobtitle
+                  })
+                  jobtitle = [...new Set(jobtitle)]
+                  let formated = []
+                  for (const key in jobtitle) {
+                    if (Object.hasOwnProperty.call(jobtitle, key)) {
+                      const element = jobtitle[key];
+                      const count = title.filter(x => x.toJobtitle === element).length;
+                      const percentage = parseFloat(count / title.length).toFixed(4) * 100;
+                      formated.push({ name: element, y: percentage })
+
+
+                      console.log(percentage);
+
+
+                    }
+                  }
+                  console.log(title)
+                  createchart1(formated)
+                }
+              },
+            },
+          },
+          series: [{
+            name: 'Job Titles',
+            colorByPoint: true,
+            data: formated
+
+          }]
+        });
+      }
+      function createchart1(formated) {
+        Highcharts.chart('container1', {
+          chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+          },
+
+          title: {
+            text: 'Percentage of email send to JobTitles'
+          },
+          tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          accessibility: {
+            point: {
+              valueSuffix: '%'
+            }
+          },
+          plotOptions: {
+            pie: {
+              allowPointSelect: true,
+              cursor: 'pointer',
+              dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+              }
+            },
+
+          },
+          series: [{
+            name: 'Job Titles',
+            colorByPoint: true,
+            data: formated
+
+          }]
+        });
+      }
+
     }
   </script>
 
