@@ -22,6 +22,7 @@
       margin: 5px;
     }
 
+
     .links line {
       stroke: rgb(8, 8, 8);
       stroke-opacity: 0.6;
@@ -91,7 +92,7 @@
   </style>
 
   <!-- dependencies for front-end visualization -->
-  
+
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -123,47 +124,49 @@
     </br>
     </br>
     <div class="selection-container" style="padding-left: 1em;">
+
       <select class="form-select" aria-label="Default select example" id="selection-1"
-        onchange="displayVisualization(this.value, '1')">
+        onchange="EraseVisualizations(1); displayVisualization(this.value, '1');">
+        <option selected>Please choose a visualization to be displayed</option>
+        <option value="1">Pie Chart</option>
+        <option value="2">Force Directed Graph</option>
+        <option value="3">Heat Map</option>
+      </select>
+      <select class="form-select-2" aria-label="Default select example" id="selection-2"
+        onchange="EraseVisualizations(2); displayVisualization(this.value, '2');">
         <option selected>Please choose a visualization to be displayed</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
         <option value="3">Heat Map</option>
       </select>
 
-      <select class="form-select-2" aria-label="Default select example" id="selection-2"
-        onchange="displayVisualization(this.value, '2')">
-        <option selected>Please choose a visualization to be displayed</option>
-        <option value="1">Pie Chart</option>
-        <option value="2">Force Directed Graph</option>
-        <option value="3">Heat Map</option>
-      </select>
+      
+      </form>
     </div>
     </br>
     <div class="container">
 
       <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <div class="highcharts-figure">
+        <div class="highcharts-figure" id='highcharts-fig-1'>
           <div id="container-1"></div>
-            <p class="highcharts-description">
-            </p>
-  
-            <div id="container1-1"></div>
-            <p class="highcharts-description">
-            </p>
+          <p class="highcharts-description">
+          </p>
+          <div id="container1-1"></div>
+          <p class="highcharts-description">
+          </p>
           <svg width="800" height="800" id="svg-1">
           </svg>
         </div>
       </div>
       <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
-        <div class="highcharts-figure">
+        <div class="highcharts-figure" id='highcharts-fig-2'>
           <div id="container-2"></div>
-            <p class="highcharts-description">
-            </p>
-  
-            <div id="container1-2"></div>
-            <p class="highcharts-description">
-            </p>
+          <p class="highcharts-description">
+          </p>
+
+          <div id="container1-2"></div>
+          <p class="highcharts-description">
+          </p>
           <svg width="800" height="800" id="svg-2">
           </svg>
         </div>
@@ -197,6 +200,18 @@
         PieChart(svgId)
       }
 
+    }
+
+    function EraseVisualizations(visId) {
+      $(`#container-${visId}`).remove();
+      $(`#container1-${visId}`).remove();
+      $(`#svg-${visId}`).remove();
+
+      let div = $(`<div id='container-${visId}'></div>`);
+      let divChild = $(`<div id='container1-${visId}'></div>`);
+      let svg = $(`<svg width="800" height="800" id='svg-${visId}'></svg>`);
+
+      $(`#highcharts-fig-${visId}`).append(div, divChild, svg);
     }
 
     function ForceDirectedGraph(svgId) {
@@ -306,17 +321,16 @@
 
       var data;
 
-      //fetch csv dosyasini okumamizi saglar
       fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
         data = res;
-        //okudugumuz veriden sadece from jobtitle lari aliyoruz 
+
         let jobtitle = data.map((x) => {
           return x.fromJobtitle
         })
-        //elimizde kac farkli jobtitle var 
+
         jobtitle = [...new Set(jobtitle)]
         let formated = []
-        //her bir jobtitle icin yuzde hesaplanir ve bu yuzdeler formated degiskenine atilir 
+
         for (const key in jobtitle) {
           if (Object.hasOwnProperty.call(jobtitle, key)) {
             const element = jobtitle[key];
