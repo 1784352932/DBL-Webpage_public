@@ -1,12 +1,11 @@
 from os import link
 from flask import Flask, app, render_template, request, jsonify
 import pandas as pd
-import csv
-import os
+import csv, os
 from Classes.ForceDirectedFormat import ForceDirectedFormat
 from Classes.Heatmap import Heatmap
 from Classes.PieChart import PieChart
-from pandas.core.base import DataError
+
 
 
 
@@ -63,7 +62,7 @@ def visulizations():
 def Enron_anyfile(filename):
    #check if the file exists
 
-   with open('C:\\Users\\20201077\\Desktop\\Doruk Güngör\\Eindhoven\\Computer Science\\Year 1\\Q4\\DBL-Webtech\\Phyton\\Template/' + filename + '.json', 'r') as file:
+   with open('./Template/' + filename + '.json', 'r') as file:
       Json_any_file = file.read()
       return Json_any_file
 
