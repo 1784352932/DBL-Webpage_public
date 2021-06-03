@@ -4,7 +4,7 @@ from pathlib import Path
 
 class ForceDirectedFormat(JsonFormat):
     def __init__(self):
-        super().__init__({'nodes': [], 'links': []},  "C:\\Users\\20201077\\Desktop\\Doruk Güngör\\Eindhoven\\Computer Science\\Year 1\\Q4\\DBL-Webtech\\Phyton\\Template\\ForcedDirectedGraph.json")
+        super().__init__({'nodes': [], 'links': []},  "./Template/ForcedDirectedGraph.json")
 
     def writeToFile(self, data):
         data_fd_graph = self.schema
