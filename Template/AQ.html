@@ -99,6 +99,8 @@
   <script src="https://code.highcharts.com/modules/exporting.js"></script>
   <script src="https://code.highcharts.com/modules/export-data.js"></script>
   <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
 </head>
 
 <body>
@@ -140,7 +142,7 @@
         <option value="3">Heat Map</option>
       </select>
 
-      
+
       </form>
     </div>
     </br>
@@ -198,6 +200,9 @@
       }
       if (value === '1' && value !== '2') {
         PieChart(svgId)
+      }
+      if (value === '3' && value !== '2') {
+        Heatmap(svgId)
       }
 
     }
@@ -451,6 +456,44 @@
         });
       }
 
+    }
+
+    function Heatmap(svgId) {
+      let filename = document.getElementById('csv-file').value.split("\\").pop();
+      anychart.onDocumentReady(function () {
+        // create the data 
+        var data
+        fetch(`/visualizations/heatmap`).then((res) => res.json()).then((res) => {
+          data = res;
+          // create the chart and set the data
+          chart = anychart.heatMap(data);
+
+          // set the chart title
+          chart.title("Sentiment Index by Email of Enron");
+
+          var customColorScale = anychart.scales.ordinalColor();
+          customColorScale.ranges([
+            { less: -0.001 },
+            { from: 0, to: 0.2 },
+            { from: 0.21, to: 0.5 },
+            { greater: 0.51 }
+          ]);
+
+          customColorScale.colors(["#CF7A78", "#E69645", "#69A231", "#4D7623"]);
+
+          chart.colorScale(customColorScale);
+
+          // set the container id
+          chart.container(`container-${svgId}`);
+
+          // initiate drawing the chart
+          chart.draw();
+
+          chart.legend(true);
+
+        });
+      }
+      )
     }
   </script>
 
