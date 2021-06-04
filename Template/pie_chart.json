@@ -1,0 +1,884 @@
+[
+      {
+            "fromEmail": "matthew.lenhart@enron.com",
+            "toEmail": "eric.bass@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "danny.mccarty@enron.com",
+            "toEmail": "rod.hayslett@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "susan.scott@enron.com",
+            "toEmail": "monique.sanchez@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "andy.zipper@enron.com",
+            "toEmail": "mark.e.taylor@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "debra.perlingiere@enron.com",
+            "toEmail": "patrice.l.mims@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "j.kaminski@enron.com",
+            "toEmail": "kevin.m.presto@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "mark.whitt@enron.com",
+            "toEmail": "barry.tycholiz@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "chris.germany@enron.com",
+            "toEmail": "chris.germany@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "dan.hyvl@enron.com",
+            "toEmail": "stacy.dickson@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "phillip.k.ellen@enron.com",
+            "toEmail": "hunter.s.shively@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "carol.clair@enron.com",
+            "toEmail": "susan.bailey@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "kimberly.watson@enron.com",
+            "toEmail": "lindy.donoho@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "elizabeth.sager@enron.com",
+            "toEmail": "kay.mann@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "drew.fossum@enron.com",
+            "toEmail": "lindy.donoho@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "errol.mclaughlin@enron.com",
+            "toEmail": "dutch.quigley@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "david.w.delainey@enron.com",
+            "toEmail": "steven.j.kean@enron.com",
+            "fromJobtitle": "CEO",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "lavorato@enron.com",
+            "toEmail": "barry.tycholiz@enron.com",
+            "fromJobtitle": "CEO",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "richard.b.sanders@enron.com",
+            "toEmail": "jeff.dasovich@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "jeff.dasovich@enron.com",
+            "toEmail": "james.d.steffes@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "don.baughman@enron.com",
+            "toEmail": "larry.f.campbell@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "mark.e.taylor@enron.com",
+            "toEmail": "tana.jones@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "stacey.w.white@enron.com",
+            "toEmail": "kevin.m.presto@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "richard.shapiro@enron.com",
+            "toEmail": "steven.j.kean@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "lynn.blair@enron.com",
+            "toEmail": "shelley.corman@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "mike.grigsby@enron.com",
+            "toEmail": "l..gay@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "sara.shackleton@enron.com",
+            "toEmail": "tana.jones@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "tracy.geaccone@enron.com",
+            "toEmail": "kimberly.watson@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "kay.mann@enron.com",
+            "toEmail": "kay.mann@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "c..giron@enron.com",
+            "toEmail": "kam.keiser@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "kim.ward@enron.com",
+            "toEmail": "jason.williams@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "monique.sanchez@enron.com",
+            "toEmail": "susan.scott@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "steven.j.kean@enron.com",
+            "toEmail": "greg.whalley@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "louise.kitchen@enron.com",
+            "toEmail": "louise.kitchen@enron.com",
+            "fromJobtitle": "President",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "mark.mcconnell@enron.com",
+            "toEmail": "steven.harris@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "charles.weldon@enron.com",
+            "toEmail": "john.griffith@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "tana.jones@enron.com",
+            "toEmail": "stacy.dickson@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "jeffrey.a.shankman@enron.com",
+            "toEmail": "andy.zipper@enron.com",
+            "fromJobtitle": "President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "m..forney@enron.com",
+            "toEmail": "doug.gilbert-smith@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "kevin.m.presto@enron.com",
+            "toEmail": "louise.kitchen@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "barry.tycholiz@enron.com",
+            "toEmail": "gerald.nemec@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "james.d.steffes@enron.com",
+            "toEmail": "steven.j.kean@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "rick.buy@enron.com",
+            "toEmail": "greg.whalley@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "jason.williams@enron.com",
+            "toEmail": "gerald.nemec@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "cara.semperger@enron.com",
+            "toEmail": "holden.salisbury@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "gerald.nemec@enron.com",
+            "toEmail": "debra.perlingiere@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "richard.ring@enron.com",
+            "toEmail": "james.d.steffes@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "juan.hernandez@enron.com",
+            "toEmail": "don.baughman@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "paul.y barbo@enron.com",
+            "toEmail": "l..gay@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "bill.williams@enron.com",
+            "toEmail": "steven.merris@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "stephanie.panus@enron.com",
+            "toEmail": "susan.bailey@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "diana.scholtes@enron.com",
+            "toEmail": "kate.symes@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "e..haedicke@enron.com",
+            "toEmail": "elizabeth.sager@enron.com",
+            "fromJobtitle": "Managing Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "john.arnold@enron.com",
+            "toEmail": "errol.mclaughlin@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "martin.cuilla@enron.com",
+            "toEmail": "kevin.ruscitti@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "stacy.dickson@enron.com",
+            "toEmail": "debra.perlingiere@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "mary.hain@enron.com",
+            "toEmail": "james.d.steffes@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "jane.tholt@enron.com",
+            "toEmail": "jane.tholt@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "dutch.quigley@enron.com",
+            "toEmail": "charles.weldon@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "phillip.m.love@enron.com",
+            "toEmail": "errol.mclaughlin@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "marie.heard@enron.com",
+            "toEmail": "stephanie.panus@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "sean.crandall@enron.com",
+            "toEmail": "diana.scholtes@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "daren.j.farmer@enron.com",
+            "toEmail": "thomas.a.martin@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "liz.taylor@enron.com",
+            "toEmail": "keith.holst@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "scott.neal@enron.com",
+            "toEmail": "sandra.f.brawner@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "larry.f.campbell@enron.com",
+            "toEmail": "larry.f.campbell@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "lindy.donoho@enron.com",
+            "toEmail": "kimberly.watson@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "stanley.horton@enron.com",
+            "toEmail": "rod.hayslett@enron.com",
+            "fromJobtitle": "President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "susan.w.pereira@enron.com",
+            "toEmail": "kenneth.lay@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "CEO"
+      },
+      {
+            "fromEmail": "kam.keiser@enron.com",
+            "toEmail": "jay.reitmeyer@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "hunter.s.shively@enron.com",
+            "toEmail": "c..giron@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "rod.hayslett@enron.com",
+            "toEmail": "tracy.geaccone@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "andrea.ring@enron.com",
+            "toEmail": "sandra.f.brawner@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "kenneth.lay@enron.com",
+            "toEmail": "phillip.k.ellen@enron.com",
+            "fromJobtitle": "CEO",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "kate.symes@enron.com",
+            "toEmail": "bill.williams@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "theresa.staab@enron.com",
+            "toEmail": "jay.reitmeyer@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "eric.bass@enron.com",
+            "toEmail": "phillip.m.love@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "chris.dorland@enron.com",
+            "toEmail": "cooper.richey@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "paul.lucci@enron.com",
+            "toEmail": "theresa.staab@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "michelle.lokay@enron.com",
+            "toEmail": "steven.harris@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "paul.d.thomas@enron.com",
+            "toEmail": "paul.d.thomas@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "shelley.corman@enron.com",
+            "toEmail": "rod.hayslett@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "sally.beck@enron.com",
+            "toEmail": "sally.beck@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "patrice.l.mims@enron.com",
+            "toEmail": "debra.perlingiere@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "eric.saibi@enron.com",
+            "toEmail": "doug.gilbert-smith@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "susan.bailey@enron.com",
+            "toEmail": "sara.shackleton@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "larry.may@enron.com",
+            "toEmail": "john.griffith@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "holden.salisbury@enron.com",
+            "toEmail": "diana.scholtes@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "monika.causholli@enron.com",
+            "toEmail": "cara.semperger@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "darrell.schoolcraft@enron.com",
+            "toEmail": "kimberly.watson@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "jonathan.mckay@enron.com",
+            "toEmail": "brad.mckay@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "harry.arora@enron.com",
+            "toEmail": "louise.kitchen@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "greg.whalley@enron.com",
+            "toEmail": "andy.zipper@enron.com",
+            "fromJobtitle": "President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "john.hodge@enron.com",
+            "toEmail": "gerald.nemec@enron.com",
+            "fromJobtitle": "Managing Director",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "michelle.cash@enron.com",
+            "toEmail": "e..haedicke@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Managing Director"
+      },
+      {
+            "fromEmail": "vladi.pimenov@enron.com",
+            "toEmail": "jonathan.mckay@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "thomas.a.martin@enron.com",
+            "toEmail": "thomas.a.martin@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "sandra.f.brawner@enron.com",
+            "toEmail": "jonathan.mckay@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "steven.harris@enron.com",
+            "toEmail": "drew.fossum@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "jim.schwieger@enron.com",
+            "toEmail": "jim.schwieger@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "tori.kuykendall@enron.com",
+            "toEmail": "mike.grigsby@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "peter.keavey@enron.com",
+            "toEmail": "louise.kitchen@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "john.griffith@enron.com",
+            "toEmail": "andy.zipper@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "john.zufferli@enron.com",
+            "toEmail": "hunter.s.shively@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "joe.stepenovitch@enron.com",
+            "toEmail": "joe.stepenovitch@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "bill.rapp@enron.com",
+            "toEmail": "lindy.donoho@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "steven.p.south@enron.com",
+            "toEmail": "susan.scott@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "kevin.hyatt@enron.com",
+            "toEmail": "lindy.donoho@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "kevin.ruscitti@enron.com",
+            "toEmail": "martin.cuilla@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "lisa.gang@enron.com",
+            "toEmail": "cara.semperger@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "fletcher.j.sturm@enron.com",
+            "toEmail": "john.arnold@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "dana.davis@enron.com",
+            "toEmail": "dana.davis@enron.com",
+            "fromJobtitle": "Vice President",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "robin.rodrigue@enron.com",
+            "toEmail": "errol.mclaughlin@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "jay.reitmeyer@enron.com",
+            "toEmail": "mike.grigsby@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "geir.solberg@enron.com",
+            "toEmail": "m..forney@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "joe.parks@enron.com",
+            "toEmail": "eric.bass@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "jason.wolfe@enron.com",
+            "toEmail": "frank.ermis@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "h..lewis@enron.com",
+            "toEmail": "greg.whalley@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "President"
+      },
+      {
+            "fromEmail": "doug.gilbert-smith@enron.com",
+            "toEmail": "juan.hernandez@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "frank.ermis@enron.com",
+            "toEmail": "jay.reitmeyer@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "teb.lokey@enron.com",
+            "toEmail": "shelley.corman@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "james.derrick@enron.com",
+            "toEmail": "e..haedicke@enron.com",
+            "fromJobtitle": "In House Lawyer",
+            "toJobtitle": "Managing Director"
+      },
+      {
+            "fromEmail": "matt.smith@enron.com",
+            "toEmail": "susan.scott@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "mike.swerzbin@enron.com",
+            "toEmail": "mike.grigsby@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "benjamin.rogers@enron.com",
+            "toEmail": "david.w.delainey@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "CEO"
+      },
+      {
+            "fromEmail": "jeff.skilling@enron.com",
+            "toEmail": "danny.mccarty@enron.com",
+            "fromJobtitle": "CEO",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "mark.guzman@enron.com",
+            "toEmail": "cara.semperger@enron.com",
+            "fromJobtitle": "Managing Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "scott.hendrickson@enron.com",
+            "toEmail": "chris.germany@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "mike.carson@enron.com",
+            "toEmail": "john.zufferli@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "geoff.storey@enron.com",
+            "toEmail": "hunter.s.shively@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "albert.meyers@enron.com",
+            "toEmail": "bill.williams@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "robert.badeer@enron.com",
+            "toEmail": "jeff.dasovich@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "ryan.slinger@enron.com",
+            "toEmail": "craig.dean@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "phillip.platter@enron.com",
+            "toEmail": "holden.salisbury@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "jeff.king@enron.com",
+            "toEmail": "don.baughman@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "judy.townsend@enron.com",
+            "toEmail": "chris.germany@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "l..gay@enron.com",
+            "toEmail": "daren.j.farmer@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "matt.motley@enron.com",
+            "toEmail": "sean.crandall@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "tom.donohoe@enron.com",
+            "toEmail": "kevin.ruscitti@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Trader"
+      },
+      {
+            "fromEmail": "keith.holst@enron.com",
+            "toEmail": "jason.wolfe@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "joe.quenet@enron.com",
+            "toEmail": "chris.dorland@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Manager"
+      },
+      {
+            "fromEmail": "mike.maggi@enron.com",
+            "toEmail": "kim.ward@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Unknown"
+      },
+      {
+            "fromEmail": "mary.fischer@enron.com",
+            "toEmail": "mary.fischer@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "robert.benson@enron.com",
+            "toEmail": "kevin.m.presto@enron.com",
+            "fromJobtitle": "Director",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "chris.stokley@enron.com",
+            "toEmail": "richard.b.sanders@enron.com",
+            "fromJobtitle": "Unknown",
+            "toJobtitle": "Vice President"
+      },
+      {
+            "fromEmail": "craig.dean@enron.com",
+            "toEmail": "cara.semperger@enron.com",
+            "fromJobtitle": "Trader",
+            "toJobtitle": "Employee"
+      },
+      {
+            "fromEmail": "cooper.richey@enron.com",
+            "toEmail": "sean.crandall@enron.com",
+            "fromJobtitle": "Manager",
+            "toJobtitle": "Director"
+      },
+      {
+            "fromEmail": "brad.mckay@enron.com",
+            "toEmail": "peter.keavey@enron.com",
+            "fromJobtitle": "Employee",
+            "toJobtitle": "Employee"
+      }
+]

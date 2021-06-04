@@ -19,21 +19,25 @@
   
           // create the data 
           var data = [
-            { x: "matthew.lenhart@enron.com", y: "eric.bass@enron.com", heat: 0.0136986301369863  },
+            { x: "matthew.lenhart@enron.com", y: "eric.bass@enron.com", heat: 0.0136986301369863 },
 
           ];        
-          
           // create the chart and set the data
           chart = anychart.heatMap(data);
           
           // set the chart title
           chart.title("Sentiment Index by Email of Enron");
+
+          var customColorScale = anychart.scales.ordinalColor();
+          customColorScale.ranges([
+            { less: -0.001 },
+            { from: 0, to: 0.2 },
+            { from: 0.21, to: 0.5 },
+            { greater: 0.51 }
+          ]);
           
-          // create and configure the color scale.
-          var customColorScale = anychart.scales.linearColor();
-          customColorScale.colors(["#ACE8D4", "#00726A"]);
-          
-          // set the color scale as the color scale of the chart
+          customColorScale.colors(["#CF7A78", "#E69645", "#69A231", "#4D7623"]);
+
           chart.colorScale(customColorScale);
           
           // set the container id
@@ -41,8 +45,10 @@
           
           // initiate drawing the chart
           chart.draw();
-          
-        });
+
+          chart.legend(true);
+
+          });
       </script>
   </body>
 </html>
