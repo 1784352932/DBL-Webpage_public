@@ -512,8 +512,8 @@
         // Build color scale
         var myColor = d3.scaleSequential()
           .interpolator(d3.interpolateInferno)
-          .domain([1, 100])
-          d => scale(d.fromJobtitle);
+          .domain([-1,1])
+          d => scale(d.sentiment);
 
         // create a tooltip
         var tooltip = d3.select(`#svg-${svgId}`)
@@ -527,20 +527,20 @@
           .style("padding", "5px")
 
         // Three function that change the tooltip when user hover / move / leave a cell
-        var mouseover = function (d) {
+        var mouseover = function (data, d) {
           tooltip
             .style("opacity", 1)
           d3.select(this)
             .style("stroke", "black")
             .style("opacity", 1)
         }
-        var mousemove = function (d) {
+        var mousemove = function (data, d) {
           tooltip
             .html("The exact value of this cell is: " + d.sentiment)
             .style("left", (d3.mouse(this)[0] + 70) + "px")
             .style("top", (d3.mouse(this)[1]) + "px")
         }
-        var mouseleave = function (d) {
+        var mouseleave = function (data, d) {
           tooltip
             .style("opacity", 0)
           d3.select(this)
