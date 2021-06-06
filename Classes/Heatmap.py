@@ -4,14 +4,14 @@ from pathlib import Path
 
 class Heatmap(JsonFormat):
     def __init__(self):
-        super().__init__({'variables': []}, "./Template/heatmap.json")
+        super().__init__([], "./Template/heatmap.json")
 
     def writeToFile(self, data):
         Heatmap_format = self.schema
 
         for key in data:
-            Heatmap_format['variables'].append({'fromEmail': data[key][0]["fromEmail"],
-                'toEmail': data[key][0]["toEmail"], 'sentiment': data[key][0]["sentiment"]})
+            Heatmap_format.append({'fromId': data[key][0]["fromId"],
+                'toId': data[key][0]["toId"], 'sentiment': data[key][0]["sentiment"]})
                 
         
         with open(self.filepath, "w") as jsonFile:
