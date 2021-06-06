@@ -1,0 +1,11 @@
+﻿date,fromId,fromEmail,fromJobtitle,toId,toEmail,toJobtitle,messageType,sentiment
+2001-03-10,62,dan.hyvl@enron.com,Employee,131,stacy.dickson@enron.com,Employee,TO,0.0547945205479452
+2001-10-23,129,shelley.corman@enron.com,Vice President,129,shelley.corman@enron.com,Vice President,TO,0.0136986301369863
+2001-04-02,33,jim.schwieger@enron.com,Trader,7,kim.ward@enron.com,Unknown,TO,0.0410958904109589
+2001-09-01,42,jeff.dasovich@enron.com,Employee,116,richard.shapiro@enron.com,Vice President,TO,-0.052631578947368474
+2001-09-01,42,jeff.dasovich@enron.com,Employee,14,louise.kitchen@enron.com,President,TO,-0.052631578947368474
+2000-03-25,116,richard.shapiro@enron.com,Vice President,134,steven.j.kean@enron.com,Vice President,TO,-0.21052631578947367
+2001-09-01,42,jeff.dasovich@enron.com,Employee,134,steven.j.kean@enron.com,Vice President,TO,-0.052631578947368474
+2001-09-01,42,jeff.dasovich@enron.com,Employee,68,david.w.delainey@enron.com,CEO,TO,-0.052631578947368474
+2001-09-01,42,jeff.dasovich@enron.com,Employee,36,james.d.steffes@enron.com,Vice President,TO,-0.052631578947368474
+2001-03-07,125,sara.shackleton@enron.com,Unknown,7,kim.ward@enron.com,Unknown,TO,0.0
