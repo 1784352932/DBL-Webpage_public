@@ -22,7 +22,6 @@
       margin: 5px;
     }
 
-
     .links line {
       stroke: rgb(14, 13, 13);
       stroke-opacity: 0.6;
@@ -38,6 +37,7 @@
       font-family: sans-serif;
       font-size: 10px;
     }
+
 
     .highcharts-figure,
     .highcharts-data-table table {
@@ -231,13 +231,29 @@
     }
 
     function ForceDirectedGraph(svgId) {
+
       let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var svg = d3.select(`#svg-${svgId}`),
+
+      //var scale_val = 1;
+      //var translate = [];
+
+      /*var x_scale = d3.scale.linear().domain([0, width]).range([0, width]);
+      var y_scale = d3.scale.linear().domain([0, height]).range([0, height]);
+      window.zoom = d3.behavior.zoom()
+        .center([width / 2, height / 2])
+        .scaleExtent([1, 10])
+        .x(x_scale)
+        .y(y_scale)
+        .on("zoom", zoomed);
+
+      */var svg = d3.select(`#svg-${svgId}`),
         width = +svg.attr("width"),
-        height = +svg.attr("height");
+        height = +svg.attr("height")
+      //.call(zoom);
 
       var color = d3.scaleOrdinal(d3.schemeCategory20);
       d => scale(d.group);
+      //d => scale(d.sentiment);
 
       var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function (d) {
@@ -258,14 +274,6 @@
             return d.sentiment;
           });
 
-        var clip = svg.append("defs").append("svg:clipPath")
-          .attr("id", "clip")
-          .append("svg:rect")
-          .attr("width", width)
-          .attr("height", height)
-          .attr("x", 0)
-          .attr("y", 0);
-
         var node = svg.append("g")
           .attr("class", "nodes")
           .selectAll("circle")
@@ -285,24 +293,11 @@
             return "Email: " + d.id + ", Jobtitle: " + d.group;
           });
 
-        var idleTimeout
-        function idled() {
-          idleTimeout = null;
-        }
-
         link.append("title")
           .text(function (d) {
             return "Sentiment: " + d.sentiment;
           });
 
-        var brush = d3.brushX()                 // Add the brush feature using the d3.brush function
-          .extent([[0, 0], [width, height]]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
-          .on("end", updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
-
-        node
-          .append("g")
-          .attr("class", "brush")
-          .call(brush)
 
         simulation
           .nodes(graph.nodes)
@@ -310,32 +305,6 @@
 
         simulation.force("link")
           .links(graph.links);
-
-        function updateChart() {
-
-          extent = d3.event.selection
-
-          // If no selection, back to initial coordinate. Otherwise, update X axis domain
-          if (!extent) {
-            if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
-            x.domain([4, 8])
-          } else {
-            x.domain([x.invert(extent[0]), x.invert(extent[1])])
-            scatter.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
-          }
-
-          // Update axis and circle position
-          xAxis.transition().duration(1000).call(d3.axisBottom(x))
-          node
-            .selectAll("circle")
-            .transition().duration(1000)
-            .attr("cx", function (d) {
-              return x(d.Sepal_Length);
-            })
-            .attr("cy", function (d) {
-              return y(d.Petal_Length);
-            })
-        }
 
         function ticked() {
           link
@@ -378,7 +347,72 @@
         d.fx = null;
         d.fy = null;
       }
-    }
+
+      /*function toggleBrushing() {
+        var contents = $("#brushOption").html();
+        if (contents.indexOf('on') != -1) {
+          brushing = true;
+
+          brush = d3.select(`#svg-${svgId}`).append("g")
+            .attr("class", "brush")
+            .call(d3.svg.brush()
+              .x(window.zoom.x())
+              .y(window.zoom.y())
+              .on("brush", function () {
+                var extent = d3.event.target.extent();
+                d3.selectAll(".node").select("circle").classed("selected", function (d) {
+
+                  return d.selected = (extent[0][0] <= d.x && d.x < extent[1][0]
+                    && extent[0][1] <= d.y && d.y < extent[1][1]);
+                });
+              })
+              .on("brushend", function () {
+                d3.event.target.clear();
+                d3.select(this).call(d3.event.target);
+              }));
+          $("#brushOption").html('Turn off Brushing');
+        } else {
+          brushing = false;
+          d3.select(".brush").remove();
+          $("#brushOption").html('Turn on Brushing');
+          d3.selectAll(".node").select("circle").classed("selected", false);
+        }
+      }
+
+      function updateBrush() {
+        var extent = d3.event.target.extent();
+
+        console.log(scale_val);
+        console.log(translate);
+        d3.selectAll(".node").select("circle").classed("selected", function (d) {
+          if (extent[0][0] <= d.x && d.x < extent[1][0] && extent[0][1] <= d.y && d.y < extent[1][1]) {
+            if (d.group == "Domain") {
+              //                domains += d.name + ",";
+            }
+            return true;
+          }
+          return false;
+        });
+      }
+
+
+      function zoomed() {
+
+        d3.select(`#svg-${svgId}`).select("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+        //
+        updateBrush();
+        translate = d3.event.translate;
+        scale_val = d3.event.scale;
+        $('#slider').slider("value", d3.event.scale * 1000);
+
+      }
+
+
+      createNetworkVisualization('#graph-view', 400, 400);
+      $("#brushOption").click(function () {
+        toggleBrushing();
+      });
+    */}
 
     function PieChart(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
