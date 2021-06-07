@@ -24,8 +24,9 @@
 
 
     .links line {
-      stroke: rgb(8, 8, 8);
+      stroke: rgb(14, 13, 13);
       stroke-opacity: 0.6;
+      stroke-width: 2px;
     }
 
     .nodes circle {
@@ -180,10 +181,10 @@
             </svg>
           </div>
           <div id="heatmap-tooltip-2">
-          <div>
+            <div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
   </main>
 
@@ -257,6 +258,14 @@
             return d.sentiment;
           });
 
+        var clip = svg.append("defs").append("svg:clipPath")
+          .attr("id", "clip")
+          .append("svg:rect")
+          .attr("width", width)
+          .attr("height", height)
+          .attr("x", 0)
+          .attr("y", 0);
+
         var node = svg.append("g")
           .attr("class", "nodes")
           .selectAll("circle")
@@ -276,10 +285,24 @@
             return "Email: " + d.id + ", Jobtitle: " + d.group;
           });
 
+        var idleTimeout
+        function idled() {
+          idleTimeout = null;
+        }
+
         link.append("title")
           .text(function (d) {
             return "Sentiment: " + d.sentiment;
           });
+
+        var brush = d3.brushX()                 // Add the brush feature using the d3.brush function
+          .extent([[0, 0], [width, height]]) // initialise the brush area: start at 0,0 and finishes at width,height: it means I select the whole graph area
+          .on("end", updateChart) // Each time the brush selection changes, trigger the 'updateChart' function
+
+        node
+          .append("g")
+          .attr("class", "brush")
+          .call(brush)
 
         simulation
           .nodes(graph.nodes)
@@ -287,6 +310,32 @@
 
         simulation.force("link")
           .links(graph.links);
+
+        function updateChart() {
+
+          extent = d3.event.selection
+
+          // If no selection, back to initial coordinate. Otherwise, update X axis domain
+          if (!extent) {
+            if (!idleTimeout) return idleTimeout = setTimeout(idled, 350); // This allows to wait a little bit
+            x.domain([4, 8])
+          } else {
+            x.domain([x.invert(extent[0]), x.invert(extent[1])])
+            scatter.select(".brush").call(brush.move, null) // This remove the grey brush area as soon as the selection has been done
+          }
+
+          // Update axis and circle position
+          xAxis.transition().duration(1000).call(d3.axisBottom(x))
+          node
+            .selectAll("circle")
+            .transition().duration(1000)
+            .attr("cx", function (d) {
+              return x(d.Sepal_Length);
+            })
+            .attr("cy", function (d) {
+              return y(d.Petal_Length);
+            })
+        }
 
         function ticked() {
           link
