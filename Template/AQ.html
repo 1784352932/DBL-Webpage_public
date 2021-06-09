@@ -23,9 +23,9 @@
     }
 
     .links line {
-      stroke: rgb(14, 13, 13);
+      stroke: #999;
       stroke-opacity: 0.6;
-      stroke-width: 2px;
+      stroke-width: 5px;
     }
 
     .nodes circle {
@@ -234,22 +234,10 @@
 
       let filename = document.getElementById('csv-file').value.split("\\").pop();
 
-      //var scale_val = 1;
-      //var translate = [];
-
-      /*var x_scale = d3.scale.linear().domain([0, width]).range([0, width]);
-      var y_scale = d3.scale.linear().domain([0, height]).range([0, height]);
-      window.zoom = d3.behavior.zoom()
-        .center([width / 2, height / 2])
-        .scaleExtent([1, 10])
-        .x(x_scale)
-        .y(y_scale)
-        .on("zoom", zoomed);
-
-      */var svg = d3.select(`#svg-${svgId}`),
+      var svg = d3.select(`#svg-${svgId}`),
         width = +svg.attr("width"),
         height = +svg.attr("height")
-      //.call(zoom);
+
 
       var color = d3.scaleOrdinal(d3.schemeCategory20);
       d => scale(d.group);
@@ -272,6 +260,39 @@
           .enter().append("line")
           .attr("stroke-width", function (d) {
             return d.sentiment;
+          }).on('click', (d) => {
+            let otherSvgId;
+
+            if (svgId == 1)
+              otherSvgId = 2
+            else
+              otherSvgId = 1
+
+            let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
+              
+            if (!heatmap){
+              return;
+            }
+
+            d3.selectAll('svg').selectAll('rect')
+            .style("stroke", "none")
+            .style("opacity", 0.8);
+
+            heatmap.style.stroke = "black";
+            heatmap.style.opacity = 1;
+
+            let tooltip = document.getElementsByClassName(`tooltip`)[0];
+
+            tooltip.style.opacity = 1;
+            tooltip.innerHTML = JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id});
+          
+            setTimeout(() => {
+              heatmap.style.stroke = "none";
+              heatmap.style.opacity = 0.8;
+
+              if (tooltip.innerHTML === JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id}))
+                tooltip.style.opacity = 0;
+            }, 5000)
           });
 
         var node = svg.append("g")
@@ -348,71 +369,7 @@
         d.fy = null;
       }
 
-      /*function toggleBrushing() {
-        var contents = $("#brushOption").html();
-        if (contents.indexOf('on') != -1) {
-          brushing = true;
-
-          brush = d3.select(`#svg-${svgId}`).append("g")
-            .attr("class", "brush")
-            .call(d3.svg.brush()
-              .x(window.zoom.x())
-              .y(window.zoom.y())
-              .on("brush", function () {
-                var extent = d3.event.target.extent();
-                d3.selectAll(".node").select("circle").classed("selected", function (d) {
-
-                  return d.selected = (extent[0][0] <= d.x && d.x < extent[1][0]
-                    && extent[0][1] <= d.y && d.y < extent[1][1]);
-                });
-              })
-              .on("brushend", function () {
-                d3.event.target.clear();
-                d3.select(this).call(d3.event.target);
-              }));
-          $("#brushOption").html('Turn off Brushing');
-        } else {
-          brushing = false;
-          d3.select(".brush").remove();
-          $("#brushOption").html('Turn on Brushing');
-          d3.selectAll(".node").select("circle").classed("selected", false);
-        }
-      }
-
-      function updateBrush() {
-        var extent = d3.event.target.extent();
-
-        console.log(scale_val);
-        console.log(translate);
-        d3.selectAll(".node").select("circle").classed("selected", function (d) {
-          if (extent[0][0] <= d.x && d.x < extent[1][0] && extent[0][1] <= d.y && d.y < extent[1][1]) {
-            if (d.group == "Domain") {
-              //                domains += d.name + ",";
-            }
-            return true;
-          }
-          return false;
-        });
-      }
-
-
-      function zoomed() {
-
-        d3.select(`#svg-${svgId}`).select("g").attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
-        //
-        updateBrush();
-        translate = d3.event.translate;
-        scale_val = d3.event.scale;
-        $('#slider').slider("value", d3.event.scale * 1000);
-
-      }
-
-
-      createNetworkVisualization('#graph-view', 400, 400);
-      $("#brushOption").click(function () {
-        toggleBrushing();
-      });
-    */}
+    }
 
     function PieChart(svgId) {
       let filename = document.getElementById('csv-file').value.split("\\").pop();
@@ -643,6 +600,9 @@
           })
           .enter()
           .append("rect")
+          .attr("id", function(d) {
+            return `hm${d.sentiment}`;
+          })
           .attr("x", function (d) {
             return x(d.fromId)
           })
@@ -653,15 +613,15 @@
           .attr("ry", 4)
           .attr("width", x.bandwidth())
           .attr("height", y.bandwidth())
+          .on("mouseover", mouseover)
+          .on("mousemove", mousemove)
+          .on("mouseleave", mouseleave)
           .style("fill", function (d) {
             return myColor(d.sentiment)
           })
           .style("stroke-width", 4)
           .style("stroke", "none")
           .style("opacity", 0.8)
-          .on("mouseover", mouseover)
-          .on("mousemove", mousemove)
-          .on("mouseleave", mouseleave)
       })
 
       // Add title to graph
