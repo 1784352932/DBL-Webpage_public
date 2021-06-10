@@ -25,7 +25,7 @@
     .links line {
       stroke: #999;
       stroke-opacity: 0.6;
-      stroke-width: 5px;
+      stroke-width: 1px;
     }
 
     .nodes circle {
@@ -259,40 +259,7 @@
           .data(graph.links)
           .enter().append("line")
           .attr("stroke-width", function (d) {
-            return d.sentiment;
-          }).on('click', (d) => {
-            let otherSvgId;
-
-            if (svgId == 1)
-              otherSvgId = 2
-            else
-              otherSvgId = 1
-
-            let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
-              
-            if (!heatmap){
-              return;
-            }
-
-            d3.selectAll('svg').selectAll('rect')
-            .style("stroke", "none")
-            .style("opacity", 0.8);
-
-            heatmap.style.stroke = "black";
-            heatmap.style.opacity = 1;
-
-            let tooltip = document.getElementsByClassName(`tooltip`)[0];
-
-            tooltip.style.opacity = 1;
-            tooltip.innerHTML = JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id});
-          
-            setTimeout(() => {
-              heatmap.style.stroke = "none";
-              heatmap.style.opacity = 0.8;
-
-              if (tooltip.innerHTML === JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id}))
-                tooltip.style.opacity = 0;
-            }, 5000)
+            return 1;
           });
 
         var node = svg.append("g")
@@ -303,7 +270,40 @@
           .attr("r", 5)
           .attr("fill", function (d) {
             return color(d.group);
-          })
+          }).on('click', (d) => {
+              let otherSvgId;
+
+              if (svgId == 1)
+                otherSvgId = 2
+              else
+                otherSvgId = 1
+
+              let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
+                
+              if (!heatmap){
+                return;
+              }
+
+              d3.selectAll('svg').selectAll('rect')
+              .style("stroke", "none")
+              .style("opacity", 0.8);
+
+              heatmap.style.stroke = "black";
+              heatmap.style.opacity = 1;
+
+              let tooltip = document.getElementsByClassName(`tooltip`)[0];
+
+              tooltip.style.opacity = 1;
+              tooltip.innerHTML = JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id});
+            
+              setTimeout(() => {
+                heatmap.style.stroke = "none";
+                heatmap.style.opacity = 0.8;
+
+                if (tooltip.innerHTML === JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id}))
+                  tooltip.style.opacity = 0;
+              }, 5000)
+            })
           .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -316,7 +316,7 @@
 
         link.append("title")
           .text(function (d) {
-            return "Sentiment: " + d.sentiment;
+            return 1;
           });
 
 
