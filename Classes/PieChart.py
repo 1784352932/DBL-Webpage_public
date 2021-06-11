@@ -10,9 +10,13 @@ class PieChart(JsonFormat):
         PieChart_format = self.schema
 
         for key in data:
-            PieChart_format.append({'fromEmail': data[key][0]["fromEmail"],
-                'toEmail': data[key][0]["toEmail"], 'fromJobtitle': data[key][0]["fromJobtitle"], 
-                'toJobtitle': data[key][0]["toJobtitle"]})
+            for i in range(len(data[key])):
+                to_append = {'fromEmail': data[key][i]["fromEmail"],
+                    'toEmail': data[key][i]["toEmail"], 'fromJobtitle': data[key][i]["fromJobtitle"], 
+                    'toJobtitle': data[key][i]["toJobtitle"]}
+
+                if to_append not in PieChart_format:
+                    PieChart_format.append(to_append)
                 
         
         with open(self.filepath, "w") as jsonFile:
