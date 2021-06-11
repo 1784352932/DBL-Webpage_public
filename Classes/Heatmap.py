@@ -10,10 +10,12 @@ class Heatmap(JsonFormat):
         Heatmap_format = self.schema
 
         for key in data:
-            Heatmap_format.append({'fromId': data[key][0]["fromId"],
-                'toId': data[key][0]["toId"], 'sentiment': data[key][0]["sentiment"]})
-                
-        
+            for i in range(len(data[key])):
+                to_append = {'fromId': data[key][i]["fromId"], 'toId': data[key][i]["toId"], 'sentiment': data[key][i]["sentiment"]}
+
+                if to_append not in Heatmap_format:
+                    Heatmap_format.append(to_append)
+    
         with open(self.filepath, "w") as jsonFile:
             jsonFile.write(json.dumps(Heatmap_format, indent=6))
       
