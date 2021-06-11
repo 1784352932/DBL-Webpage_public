@@ -25,7 +25,7 @@
     .links line {
       stroke: #999;
       stroke-opacity: 0.6;
-      stroke-width: 5px;
+      stroke-width: 2px;
     }
 
     .nodes circle {
@@ -241,7 +241,6 @@
 
       var color = d3.scaleOrdinal(d3.schemeCategory20);
       d => scale(d.group);
-      //d => scale(d.sentiment);
 
       var simulation = d3.forceSimulation()
         .force("link", d3.forceLink().id(function (d) {
@@ -259,7 +258,7 @@
           .data(graph.links)
           .enter().append("line")
           .attr("stroke-width", function (d) {
-            return d.sentiment;
+            return d.emails_count;
           }).on('click', (d) => {
             let otherSvgId;
 
@@ -269,14 +268,14 @@
               otherSvgId = 1
 
             let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
-              
-            if (!heatmap){
+
+            if (!heatmap) {
               return;
             }
 
             d3.selectAll('svg').selectAll('rect')
-            .style("stroke", "none")
-            .style("opacity", 0.8);
+              .style("stroke", "none")
+              .style("opacity", 0.8);
 
             heatmap.style.stroke = "black";
             heatmap.style.opacity = 1;
@@ -284,13 +283,13 @@
             let tooltip = document.getElementsByClassName(`tooltip`)[0];
 
             tooltip.style.opacity = 1;
-            tooltip.innerHTML = JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id});
-          
+            tooltip.innerHTML = JSON.stringify({ 'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id });
+
             setTimeout(() => {
               heatmap.style.stroke = "none";
               heatmap.style.opacity = 0.8;
 
-              if (tooltip.innerHTML === JSON.stringify({'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id}))
+              if (tooltip.innerHTML === JSON.stringify({ 'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id }))
                 tooltip.style.opacity = 0;
             }, 5000)
           });
@@ -304,6 +303,42 @@
           .attr("fill", function (d) {
             return color(d.group);
           })
+          .on('click', (d) => {
+            let otherSvgId;
+
+            if (svgId == 1)
+              otherSvgId = 2
+            else
+              otherSvgId = 1
+
+            let heatmap = document.querySelector(`[id='hm${d.fromId}']`);
+
+            if (!heatmap) {
+              return;
+            }
+
+            d3.selectAll('svg').selectAll('rect')
+              .style("stroke", "none")
+              .style("opacity", 0.8);
+
+            heatmap.style.stroke = "black";
+            heatmap.style.opacity = 1;
+
+            let tooltip = document.getElementsByClassName(`tooltip`)[0];
+
+            tooltip.style.opacity = 1;
+            let json = { 'fromEmail': d.id, 'fromId': d.fromId, 'group': d.group}
+
+            tooltip.innerHTML = JSON.stringify(json);
+
+            setTimeout(() => {
+              heatmap.style.stroke = "none";
+              heatmap.style.opacity = 0.8;
+
+              if (tooltip.innerHTML === JSON.stringify(json))
+                tooltip.style.opacity = 0;
+            }, 5000)
+          })
           .call(d3.drag()
             .on("start", dragstarted)
             .on("drag", dragged)
@@ -311,12 +346,12 @@
 
         node.append("title")
           .text(function (d) {
-            return "Email: " + d.id + ", Jobtitle: " + d.group;
+            return "Email: " + d.id + ", Jobtitle: " + d.group +  ", FromId: " + d.fromId;
           });
 
         link.append("title")
           .text(function (d) {
-            return "Sentiment: " + d.sentiment;
+            return "The number of Emails: " + d.emails_count;
           });
 
 
@@ -600,8 +635,8 @@
           })
           .enter()
           .append("rect")
-          .attr("id", function(d) {
-            return `hm${d.sentiment}`;
+          .attr("id", function (d) {
+            return `hm${d.fromId}`;
           })
           .attr("x", function (d) {
             return x(d.fromId)
