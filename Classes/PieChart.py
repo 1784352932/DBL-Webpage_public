@@ -15,9 +15,10 @@ class PieChart(JsonFormat):
                     'toEmail': data[key][i]["toEmail"], 'fromJobtitle': data[key][i]["fromJobtitle"], 
                     'toJobtitle': data[key][i]["toJobtitle"]}
 
-                if to_append not in PieChart_format:
-                    PieChart_format.append(to_append)
-                
+                PieChart_format.append(to_append)
+
+        PieChart_format = set(frozenset(d.items()) for d in PieChart_format)
+        PieChart_format = [dict(s) for s in PieChart_format]
         
         with open(self.filepath, "w") as jsonFile:
             jsonFile.write(json.dumps(PieChart_format, indent=6))
