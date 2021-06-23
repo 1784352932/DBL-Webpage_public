@@ -1,10 +1,8 @@
-''' 
-6. fix performance issues!!!
-'''
 from Classes.JsonFormat import JsonFormat
 import os
 import json
 from pathlib import Path
+import pandas as pd
 
 
 class ForceDirectedFormat(JsonFormat):
@@ -25,25 +23,23 @@ class ForceDirectedFormat(JsonFormat):
 
             for item in data[key]:
                 to_append = {
-                    'source': item['fromEmail'], 'target': item['toEmail']}
+                    'source': item['fromEmail'], 'target': item['toEmail'], 'emails_count': 0}
 
-                if to_append not in data_fd_graph['links']:
-                    data_fd_graph['links'].append(to_append)
+                data_fd_graph['links'].append(to_append)
 
                 data_fd_graph_full.append(to_append)
 
                 to_append = {
                     'id': item['toEmail'], 'group': item['toJobtitle'], 'fromId': item['toId']}
 
-                if (to_append not in data_fd_graph['nodes']):
-                    data_fd_graph['nodes'].append(to_append)
+                data_fd_graph['nodes'].append(to_append)
 
-        for i in range(len(data_fd_graph['links'])):
-            item = data_fd_graph['links'][i]
-            curr_connections = list(filter(
-                lambda x: x['source'] == item['source'] and x['target'] == item['target'], data_fd_graph_full))
+        data_fd_graph['nodes'] = set(frozenset(d.items()) for d in data_fd_graph['nodes'])
+        data_fd_graph['nodes'] = [dict(s) for s in data_fd_graph['nodes']]
 
-            data_fd_graph['links'][i]['emails_count'] = len(curr_connections)
+        df = pd.DataFrame(data_fd_graph['links']).groupby(['source', 'target'])['emails_count'].agg('count').reset_index()
+
+        data_fd_graph['links'] = (df.to_dict('r'))
 
         with open(self.filepath, "w") as jsonFile:
             jsonFile.write(json.dumps(data_fd_graph, indent=6))
