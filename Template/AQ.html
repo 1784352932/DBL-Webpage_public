@@ -1,625 +1,711 @@
 <!DOCTYPE html>
 
 <head>
-  <meta charset="utf-8">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    </title>
-  <link rel="stylesheet" href="./main.css">
-  
+    <meta charset="utf-8">
 
-  <!-- dependencies for front-end visualization -->
+    <!--<style href="./visualizations.css"></style>-->
 
-  <script src="https://d3js.org/d3.v4.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="https://code.highcharts.com/modules/exporting.js"></script>
-  <script src="https://code.highcharts.com/modules/export-data.js"></script>
-  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
-  <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
-  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .selection-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .horizontal_div {
+            width: 800px;
+            height: 800px;
+            border: 1px black;
+            background: white;
+            margin: 5px;
+        }
+        
+        .links line {
+            stroke: #999;
+            stroke-opacity: 0.6;
+            stroke-width: 2px;
+        }
+        
+        .nodes circle {
+            stroke: #fff;
+            stroke-width: 1.5px;
+        }
+        
+        text {
+            font-family: sans-serif;
+            font-size: 10px;
+        }
+        
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 320px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+        
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #EBEBEB;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+        
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+        
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+        
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+        
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+        
+        input[type="number"] {
+            min-width: 50px;
+        }
+        
+        .highcharts-credits {
+            display: hidden !important;
+        }
+    </style>
+
+
+
+    <!-- dependencies for front-end visualization -->
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.7.1/js/anychart-heatmap.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <!--<script src="./Force_Directed_Graph.js"></script>
+    <script src="./PieChart.js"></script>
+    <script src="./Heatmap.js"></script>-->
 </head>
 
 <body>
-  <title>
-    DBL-Webtech Group 12BC Visualizations
-  </title>
+    <title>
+        DBL-Webtech Group 12BC Visualizations
+    </title>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="./Base.html">DBL-Webtech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="./Base.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="AQ.html">Visualizations</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#video">Video</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  
-  <main style="background-image: url('../assets/background-6228032_1920.jpg');" class="w-md-75 mx-auto pt-2 white-text">
     <header>
-      <h1 class="text-center text-warning mt-3"> Visualizations </h1>
+        <h1 style="text-align:center; font-size: 300%; color: crimson;"> Visualizations </h1>
     </header>
-    <div class="mb-5 text-center w-25 mx-auto">
-      <p class="fs-5">
-        Select a dataset file and visualization type
-      </p>
-      <form class="d-flex flex-column mt-5" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
-        <label id="inputLabel" class="upload-btn mb-2" for="csv-file">
-          Upload a file
-        </label>
-        <input class="d-none " type="file" id='csv-file' name="csvfile" value="">
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </form>
-    </div>
-    <div class="selection-container  w-50 mx-auto">
-      <select class="form-select me-4" aria-label="Default select example" id="selection-1"
-        onchange="EraseVisualizations(1); displayVisualization(this.value, '1');">
-        <option selected>Choose a visualization</option>
-        <option value="1">Pie Chart</option>
-        <option value="2">Force Directed Graph</option>
-        <option value="3">Heat Map</option>
-      </select>
-      <select class="form-select " aria-label="Default select example" id="selection-2"
-        onchange="EraseVisualizations(2); displayVisualization(this.value, '2');">
-        <option selected>Choose a visualization</option>
-        <option value="1">Pie Chart</option>
-        <option value="2">Force Directed Graph</option>
-        <option value="3">Heat Map</option>
-      </select>
 
-
-      </form>
-    </div>
-    </br>
-    <div class="container">
-
-      <div class="visualization-container" id="horizontal_div">
-        <div class="highcharts-figure" id='highcharts-fig-1'>
-          <div id="container-1"></div>
-          <p class="highcharts-description">
-          </p>
-          <div id="container1-1"></div>
-          <p class="highcharts-description">
-          </p>
-          <div id="svg-container-1">
-            <svg width="800" height="800" id="svg-1">
-            </svg>
-          </div>
+    <main>
+        <div>
+            <a href="/" target="_blank">
+                <h1 style="font-size: 100%; color: rgb(8, 8, 8); padding-left: 1.5em;"> <b> Home Page </b></h1>
+            </a>
+            <p style="text-align: center;">
+                Please upload a csv file that is related to the Enron
+            </p>
+            <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data" ; style="text-align: center;">
+                <input type="file" id='csv-file' name="csvfile" value="" ; style="text-align:center">
+                <input type="submit" name="" value="Submit" ; style="text-align: center;">
+            </form>
         </div>
-      </div>
-      <div class="visualization-container" id="horizontal_div">
-        <div class="highcharts-figure" id='highcharts-fig-2'>
-          <div id="container-2"></div>
-          <p class="highcharts-description">
-          </p>
+        </br>
+        </br>
+        <div class="selection-container" style="padding-left: 1em;">
 
-          <div id="container1-2"></div>
-          <p class="highcharts-description">
-          </p>
-          <div id="svg-container-2">
-            <svg width="800" height="800" id="svg-2">
+            <select class="form-select" aria-label="Default select example" id="selection-1" onchange="EraseVisualizations(1); displayVisualization(this.value, '1');">
+        <option selected>Please choose a visualization to be displayed</option>
+        <option value="1">Pie Chart</option>
+        <option value="2">Force Directed Graph</option>
+        <option value="3">Heat Map</option>
+      </select>
+            <select class="form-select-2" aria-label="Default select example" id="selection-2" onchange="EraseVisualizations(2); displayVisualization(this.value, '2');">
+        <option selected>Please choose a visualization to be displayed</option>
+        <option value="1">Pie Chart</option>
+        <option value="2">Force Directed Graph</option>
+        <option value="3">Heat Map</option>
+      </select>
+
+
+            </form>
+        </div>
+        </br>
+        <div class="container">
+
+            <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+                <div class="highcharts-figure" id='highcharts-fig-1'>
+                    <div id="container-1"></div>
+                    <p class="highcharts-description">
+                    </p>
+                    <div id="container1-1"></div>
+                    <p class="highcharts-description">
+                    </p>
+                    <div id="svg-container-1">
+                        <svg width="800" height="800" id="svg-1">
             </svg>
-          </div>
-          <div id="heatmap-tooltip-2">
-            <div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
+            <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+                <div class="highcharts-figure" id='highcharts-fig-2'>
+                    <div id="container-2"></div>
+                    <p class="highcharts-description">
+                    </p>
 
-  </main>
+                    <div id="container1-2"></div>
+                    <p class="highcharts-description">
+                    </p>
+                    <div id="svg-container-2">
+                        <svg width="800" height="800" id="svg-2">
+            </svg>
+                    </div>
+                    <div id="heatmap-tooltip-2">
+                        <div>
+                        </div>
+                    </div>
+                </div>
 
-  <script>
-    $(document).ready(function (e) {
-      // Submit form data via Ajax
-      $("#upload-form").on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'POST',
-          url: '/visualizations/',
-          data: new FormData(this),
-          dataType: 'file',
-          contentType: false,
-          cache: false,
-          processData: false
+    </main>
+
+    <script>
+        $(document).ready(function(e) {
+            // Submit form data via Ajax
+            $("#upload-form").on('submit', function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/visualizations/',
+                    data: new FormData(this),
+                    dataType: 'file',
+                    contentType: false,
+                    cache: false,
+                    processData: false
+                });
+            });
         });
-      });
-    });
 
-    function displayVisualization(value, svgId) {
-      if (value === '2' && value !== '1') {
-        ForceDirectedGraph(svgId)
-      }
-      if (value === '1' && value !== '2') {
-        PieChart(svgId)
-      }
-      if (value === '3' && value !== '2') {
-        Heatmap(svgId)
-      }
-
-    }
-
-    function EraseVisualizations(visId) {
-      $(`#container-${visId}`).remove();
-      $(`#container1-${visId}`).remove();
-      $(`#svg-${visId}`).remove();
-
-      let div = $(`<div id='container-${visId}'></div>`);
-      let divChild = $(`<div id='container1-${visId}'></div>`);
-      let svg = $(`<svg width="800" height="800" id='svg-${visId}'></svg>`);
-
-      $(`#highcharts-fig-${visId}`).append(div, divChild, svg);
-    }
-
-    function ForceDirectedGraph(svgId) {
-
-      let filename = document.getElementById('csv-file').value.split("\\").pop();
-
-      var svg = d3.select(`#svg-${svgId}`),
-        width = +svg.attr("width"),
-        height = +svg.attr("height")
-
-
-      var color = d3.scaleOrdinal(d3.schemeCategory20);
-      d => scale(d.group);
-
-      var simulation = d3.forceSimulation()
-        .force("link", d3.forceLink().id(function (d) {
-          return d.id;
-        }))
-        .force("charge", d3.forceManyBody())
-        .force("center", d3.forceCenter(width / 2, height / 2));
-
-      d3.json("/visualizations/ForcedDirectedGraph", function (error, graph) {
-        if (error) throw error;
-
-        var link = svg.append("g")
-          .attr("class", "links")
-          .selectAll("line")
-          .data(graph.links)
-          .enter().append("line")
-          .attr("stroke-width", function (d) {
-            return d.emails_count;
-          }).on('click', (d) => {
-            let otherSvgId;
-
-            if (svgId == 1)
-              otherSvgId = 2
-            else
-              otherSvgId = 1
-
-            let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
-
-            if (!heatmap) {
-              return;
+        function displayVisualization(value, svgId) {
+            if (value === '2' && value !== '1') {
+                ForceDirectedGraph(svgId)
+            }
+            if (value === '1' && value !== '2') {
+                PieChart(svgId)
+            }
+            if (value === '3' && value !== '2') {
+                Heatmap(svgId)
             }
 
-            d3.selectAll('svg').selectAll('rect')
-              .style("stroke", "none")
-              .style("opacity", 0.8);
-
-            heatmap.style.stroke = "black";
-            heatmap.style.opacity = 1;
-
-            let tooltip = document.getElementsByClassName(`tooltip`)[0];
-
-            tooltip.style.opacity = 1;
-            tooltip.innerHTML = JSON.stringify({ 'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id });
-
-            setTimeout(() => {
-              heatmap.style.stroke = "none";
-              heatmap.style.opacity = 0.8;
-
-              if (tooltip.innerHTML === JSON.stringify({ 'sentiment': d.sentiment, 'fromEmail': d.source.id, 'toEmail': d.target.id }))
-                tooltip.style.opacity = 0;
-            }, 5000)
-          });
-
-        var node = svg.append("g")
-          .attr("class", "nodes")
-          .selectAll("circle")
-          .data(graph.nodes)
-          .enter().append("circle")
-          .attr("r", 5)
-          .attr("fill", function (d) {
-            return color(d.group);
-          })
-          .on('click', (d) => {
-            let otherSvgId;
-
-            if (svgId == 1)
-              otherSvgId = 2
-            else
-              otherSvgId = 1
-
-            let heatmap = document.querySelector(`[id='hm${d.fromId}']`);
-
-            if (!heatmap) {
-              return;
-            }
-
-            d3.selectAll('svg').selectAll('rect')
-              .style("stroke", "none")
-              .style("opacity", 0.8);
-
-            heatmap.style.stroke = "black";
-            heatmap.style.opacity = 1;
-
-            let tooltip = document.getElementsByClassName(`tooltip`)[0];
-
-            tooltip.style.opacity = 1;
-            let json = { 'fromEmail': d.id, 'fromId': d.fromId, 'group': d.group}
-
-            tooltip.innerHTML = JSON.stringify(json);
-
-            setTimeout(() => {
-              heatmap.style.stroke = "none";
-              heatmap.style.opacity = 0.8;
-
-              if (tooltip.innerHTML === JSON.stringify(json))
-                tooltip.style.opacity = 0;
-            }, 5000)
-          })
-          .call(d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended));
-
-        node.append("title")
-          .text(function (d) {
-            return "Email: " + d.id + ", Jobtitle: " + d.group +  ", FromId: " + d.fromId;
-          });
-
-        link.append("title")
-          .text(function (d) {
-            return "The number of Emails: " + d.emails_count;
-          });
-
-
-        simulation
-          .nodes(graph.nodes)
-          .on("tick", ticked);
-
-        simulation.force("link")
-          .links(graph.links);
-
-        function ticked() {
-          link
-            .attr("x1", function (d) {
-              return d.source.x;
-            })
-            .attr("y1", function (d) {
-              return d.source.y;
-            })
-            .attr("x2", function (d) {
-              return d.target.x;
-            })
-            .attr("y2", function (d) {
-              return d.target.y;
-            });
-
-          node
-            .attr("cx", function (d) {
-              return d.x;
-            })
-            .attr("cy", function (d) {
-              return d.y;
-            });
         }
-      });
 
-      function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(0.3).restart();
-        d.fx = d.x;
-        d.fy = d.y;
-      }
+        function EraseVisualizations(visId) {
+            $(`#container-${visId}`).remove();
+            $(`#container1-${visId}`).remove();
+            $(`#svg-${visId}`).remove();
 
-      function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
-      }
+            let div = $(`<div id='container-${visId}'></div>`);
+            let divChild = $(`<div id='container1-${visId}'></div>`);
+            let svg = $(`<svg width="800" height="800" id='svg-${visId}'></svg>`);
 
-      function dragended(d) {
-        if (!d3.event.active) simulation.alphaTarget(0);
-        d.fx = null;
-        d.fy = null;
-      }
-
-    }
-
-    function PieChart(svgId) {
-      let filename = document.getElementById('csv-file').value.split("\\").pop();
-
-      var data;
-
-      fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
-        data = res;
-
-        let jobtitle = data.map((x) => {
-          return x.fromJobtitle
-        })
-
-        jobtitle = [...new Set(jobtitle)]
-        let formated = []
-
-        for (const key in jobtitle) {
-          if (Object.hasOwnProperty.call(jobtitle, key)) {
-            const element = jobtitle[key];
-            const count = data.filter(x => x.fromJobtitle === element).length;
-            const percentage = parseFloat(count / data.length).toFixed(4) * 100;
-            formated.push({ name: element, y: percentage })
-
-            console.log(percentage);
-
-
-          }
+            $(`#highcharts-fig-${visId}`).append(div, divChild, svg);
         }
-        createchart(formated, svgId);
-        const list = document.getElementsByClassName('highcharts-figure');
-        list[0].style.display = "hidden"
-        console.log(jobtitle)
-        console.log(list)
-      })
 
-      function createchart(formated, containerId) {
-        Highcharts.chart(`container-${containerId}`, {
-          chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-          },
+        function ForceDirectedGraph(svgId) {
 
-          title: {
-            text: 'Percentage of email send from JobTitles'
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          accessibility: {
-            point: {
-              valueSuffix: '%'
-            }
-          },
-          plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-            },
-            series: {
-              events: {
-                click: function (event) {
-                  let title = data.filter(x => x.fromJobtitle === event.point.name)
-                  let jobtitle = title.map((x) => {
-                    return x.toJobtitle
-                  })
-                  jobtitle = [...new Set(jobtitle)]
-                  let formated = []
-                  for (const key in jobtitle) {
-                    if (Object.hasOwnProperty.call(jobtitle, key)) {
-                      const element = jobtitle[key];
-                      const count = title.filter(x => x.toJobtitle === element).length;
-                      const percentage = parseFloat(count / title.length).toFixed(4) * 100;
-                      formated.push({ name: element, y: percentage });
-                      console.log(percentage);
-                    }
-                  }
-                  console.log(title)
-                  createchart1(formated, containerId)
+            let filename = document.getElementById('csv-file').value.split("\\").pop();
+
+            var svg = d3.select(`#svg-${svgId}`),
+                width = +svg.attr("width"),
+                height = +svg.attr("height")
+
+
+            var color = d3.scaleOrdinal(d3.schemeCategory20);
+            d => scale(d.group);
+
+            var simulation = d3.forceSimulation()
+                .force("link", d3.forceLink().id(function(d) {
+                    return d.id;
+                }))
+                .force("charge", d3.forceManyBody())
+                .force("center", d3.forceCenter(width / 2, height / 2));
+
+            d3.json("/visualizations/ForcedDirectedGraph", function(error, graph) {
+                if (error) throw error;
+
+                var link = svg.append("g")
+                    .attr("class", "links")
+                    .selectAll("line")
+                    .data(graph.links)
+                    .enter().append("line")
+                    .attr("stroke-width", function(d) {
+                        return d.emails_count;
+                    }).on('click', (d) => {
+                        let otherSvgId;
+
+                        if (svgId == 1)
+                            otherSvgId = 2
+                        else
+                            otherSvgId = 1
+
+                        let heatmap = document.querySelector(`[id='hm${d.sentiment}']`);
+
+                        if (!heatmap) {
+                            return;
+                        }
+
+                        d3.selectAll('svg').selectAll('rect')
+                            .style("stroke", "none")
+                            .style("opacity", 0.8);
+
+                        heatmap.style.stroke = "black";
+                        heatmap.style.opacity = 1;
+
+                        let tooltip = document.getElementsByClassName(`tooltip`)[0];
+
+                        tooltip.style.opacity = 1;
+                        tooltip.innerHTML = JSON.stringify({
+                            'sentiment': d.sentiment,
+                            'fromEmail': d.source.id,
+                            'toEmail': d.target.id
+                        });
+
+                        setTimeout(() => {
+                            heatmap.style.stroke = "none";
+                            heatmap.style.opacity = 0.8;
+
+                            if (tooltip.innerHTML === JSON.stringify({
+                                    'sentiment': d.sentiment,
+                                    'fromEmail': d.source.id,
+                                    'toEmail': d.target.id
+                                }))
+                                tooltip.style.opacity = 0;
+                        }, 5000)
+                    });
+
+                var node = svg.append("g")
+                    .attr("class", "nodes")
+                    .selectAll("circle")
+                    .data(graph.nodes)
+                    .enter().append("circle")
+                    .attr("r", 5)
+                    .attr("fill", function(d) {
+                        return color(d.group);
+                    })
+                    .on('click', (d) => {
+                        let otherSvgId;
+
+                        if (svgId == 1)
+                            otherSvgId = 2
+                        else
+                            otherSvgId = 1
+
+                        let heatmap = document.querySelector(`[id='hm${d.fromId}']`);
+
+                        if (!heatmap) {
+                            return;
+                        }
+
+                        d3.selectAll('svg').selectAll('rect')
+                            .style("stroke", "none")
+                            .style("opacity", 0.8);
+
+                        heatmap.style.stroke = "black";
+                        heatmap.style.opacity = 1;
+
+                        let tooltip = document.getElementsByClassName(`tooltip`)[0];
+
+                        tooltip.style.opacity = 1;
+                        let json = {
+                            'fromEmail': d.id,
+                            'fromId': d.fromId,
+                            'group': d.group
+                        }
+
+                        tooltip.innerHTML = JSON.stringify(json);
+
+                        setTimeout(() => {
+                            heatmap.style.stroke = "none";
+                            heatmap.style.opacity = 0.8;
+
+                            if (tooltip.innerHTML === JSON.stringify(json))
+                                tooltip.style.opacity = 0;
+                        }, 5000)
+                    })
+                    .call(d3.drag()
+                        .on("start", dragstarted)
+                        .on("drag", dragged)
+                        .on("end", dragended));
+
+                node.append("title")
+                    .text(function(d) {
+                        return "Email: " + d.id + ", Jobtitle: " + d.group + ", FromId: " + d.fromId;
+                    });
+
+                link.append("title")
+                    .text(function(d) {
+                        return "The number of Emails: " + d.emails_count + ", fromEmail: " + d.source + ", toEmail: " + d.target;
+                    });
+
+
+                simulation
+                    .nodes(graph.nodes)
+                    .on("tick", ticked);
+
+                simulation.force("link")
+                    .links(graph.links);
+
+                function ticked() {
+                    link
+                        .attr("x1", function(d) {
+                            return d.source.x;
+                        })
+                        .attr("y1", function(d) {
+                            return d.source.y;
+                        })
+                        .attr("x2", function(d) {
+                            return d.target.x;
+                        })
+                        .attr("y2", function(d) {
+                            return d.target.y;
+                        });
+
+                    node
+                        .attr("cx", function(d) {
+                            return d.x;
+                        })
+                        .attr("cy", function(d) {
+                            return d.y;
+                        });
                 }
-              },
-            },
-          },
-          series: [{
-            name: 'Job Titles',
-            colorByPoint: true,
-            data: formated
+            });
 
-          }]
-        });
-      }
-      function createchart1(formated, containerId) {
-        Highcharts.chart(`container1-${containerId}`, {
-          chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
-          },
-
-          title: {
-            text: 'Percentage of email send to JobTitles'
-          },
-          tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-          },
-          accessibility: {
-            point: {
-              valueSuffix: '%'
+            function dragstarted(d) {
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
             }
-          },
-          plotOptions: {
-            pie: {
-              allowPointSelect: true,
-              cursor: 'pointer',
-              dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-              }
-            },
 
-          },
-          series: [{
-            name: 'Job Titles',
-            colorByPoint: true,
-            data: formated
+            function dragged(d) {
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+            }
 
-          }]
-        });
-      }
+            function dragended(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
 
-    }
-
-    function Heatmap(svgId) {
-      let filename = document.getElementById('csv-file').value.split("\\").pop();
-      var margin = { top: 80, right: 25, bottom: 30, left: 40 },
-        width = 800 - margin.left - margin.right,
-        height = 800 - margin.top - margin.bottom;
-
-      // append the svg object to the body of the page
-      var svg = d3.select(`#svg-${svgId}`)
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-        .append("g")
-        .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
-
-      //Read the data
-      d3.json("/visualizations/heatmap", function (data) {
-        var myGroups = d3.map(data, function (d) {
-          return d.fromId;
-        }).keys()
-        var myVars = d3.map(data, function (d) {
-          return d.toId;
-        }).keys()
-
-        // Build X scales and axis:
-        var x = d3.scaleBand()
-          .range([0, width])
-          .domain(myGroups)
-          .padding(0.05);
-        svg.append("g")
-          .style("font-size", 15)
-          .attr("transform", "translate(0," + height + ")")
-          .call(d3.axisBottom(x).tickSize(0))
-          .select(".domain").remove()
-
-        // Build Y scales and axis:
-        var y = d3.scaleBand()
-          .range([height, 0])
-          .domain(myVars)
-          .padding(0.05);
-        svg.append("g")
-          .style("font-size", 15)
-          .call(d3.axisLeft(y).tickSize(0))
-          .select(".domain").remove()
-
-        // Build color scale
-        var myColor = d3.scaleSequential()
-          .interpolator(d3.interpolateInferno)
-          .domain([-1, 1])
-        d => scale(d.sentiment);
-
-        // create a tooltip
-        var tooltip = d3.select(`#svg-container-${svgId}`)
-          .append(`div`)
-          .style("opacity", 0)
-          .attr("class", "tooltip")
-          .style("background-color", "white")
-          .style("border", "solid")
-          .style("border-width", "2px")
-          .style("border-radius", "5px")
-          .style("padding", "5px");
-
-        // Three function that change the tooltip when user hover / move / leave a cell
-        var mouseover = function (d) {
-          tooltip
-            .style("opacity", 1)
-          d3.select(this)
-            .style("stroke", "black")
-            .style("opacity", 1);
         }
 
-        var mousemove = function (d) {
-          tooltip
-            .html(JSON.stringify(d))
-            .style("left", (d3.mouse(this)[0] + 70) + "px")
-            .style("top", (d3.mouse(this)[1]) + "px");
+        function PieChart(svgId) {
+            let filename = document.getElementById('csv-file').value.split("\\").pop();
+
+            var data;
+
+            fetch(`/visualizations/pie_chart`).then((res) => res.json()).then((res) => {
+                data = res;
+
+                let jobtitle = data.map((x) => {
+                    return x.fromJobtitle
+                })
+
+                jobtitle = [...new Set(jobtitle)]
+                let formated = []
+
+                for (const key in jobtitle) {
+                    if (Object.hasOwnProperty.call(jobtitle, key)) {
+                        const element = jobtitle[key];
+                        const count = data.filter(x => x.fromJobtitle === element).length;
+                        const percentage = parseFloat(count / data.length).toFixed(4) * 100;
+                        formated.push({
+                            name: element,
+                            y: percentage
+                        })
+
+                        console.log(percentage);
+
+
+                    }
+                }
+                createchart(formated, svgId);
+                const list = document.getElementsByClassName('highcharts-figure');
+                list[0].style.display = "hidden"
+                console.log(jobtitle)
+                console.log(list)
+            })
+
+            function createchart(formated, containerId) {
+                Highcharts.chart(`container-${containerId}`, {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+
+                    title: {
+                        text: 'Percentage of email send from JobTitles'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    accessibility: {
+                        point: {
+                            valueSuffix: '%'
+                        }
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            }
+                        },
+                        series: {
+                            events: {
+                                click: function(event) {
+                                    let title = data.filter(x => x.fromJobtitle === event.point.name)
+                                    let jobtitle = title.map((x) => {
+                                        return x.toJobtitle
+                                    })
+                                    jobtitle = [...new Set(jobtitle)]
+                                    let formated = []
+                                    for (const key in jobtitle) {
+                                        if (Object.hasOwnProperty.call(jobtitle, key)) {
+                                            const element = jobtitle[key];
+                                            const count = title.filter(x => x.toJobtitle === element).length;
+                                            const percentage = parseFloat(count / title.length).toFixed(4) * 100;
+                                            formated.push({
+                                                name: element,
+                                                y: percentage
+                                            });
+                                            console.log(percentage);
+                                        }
+                                    }
+                                    console.log(title)
+                                    createchart1(formated, containerId)
+                                }
+                            },
+                        },
+                    },
+                    series: [{
+                        name: 'Job Titles',
+                        colorByPoint: true,
+                        data: formated
+
+                    }]
+                });
+            }
+
+            function createchart1(formated, containerId) {
+                Highcharts.chart(`container1-${containerId}`, {
+                    chart: {
+                        plotBackgroundColor: null,
+                        plotBorderWidth: null,
+                        plotShadow: false,
+                        type: 'pie'
+                    },
+
+                    title: {
+                        text: 'Percentage of email send to JobTitles'
+                    },
+                    tooltip: {
+                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                    },
+                    accessibility: {
+                        point: {
+                            valueSuffix: '%'
+                        }
+                    },
+                    plotOptions: {
+                        pie: {
+                            allowPointSelect: true,
+                            cursor: 'pointer',
+                            dataLabels: {
+                                enabled: true,
+                                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                            }
+                        },
+
+                    },
+                    series: [{
+                        name: 'Job Titles',
+                        colorByPoint: true,
+                        data: formated
+
+                    }]
+                });
+            }
+
         }
 
-        var mouseleave = function (d) {
-          tooltip
-            .style("opacity", 0)
-          d3.select(this)
-            .style("stroke", "none")
-            .style("opacity", 0.8)
+        function Heatmap(svgId) {
+            let filename = document.getElementById('csv-file').value.split("\\").pop();
+            var margin = {
+                    top: 80,
+                    right: 25,
+                    bottom: 30,
+                    left: 40
+                },
+                width = 800 - margin.left - margin.right,
+                height = 800 - margin.top - margin.bottom;
+
+            // append the svg object to the body of the page
+            var svg = d3.select(`#svg-${svgId}`)
+                .attr("width", width + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+
+            //Read the data
+            d3.json("/visualizations/heatmap", function(data) {
+                var myGroups = d3.map(data, function(d) {
+                    return d.fromId;
+                }).keys()
+                var myVars = d3.map(data, function(d) {
+                    return d.toId;
+                }).keys()
+
+                // Build X scales and axis:
+                var x = d3.scaleBand()
+                    .range([0, width])
+                    .domain(myGroups)
+                    .padding(0.05);
+                svg.append("g")
+                    .style("font-size", 15)
+                    .attr("transform", "translate(0," + height + ")")
+                    .call(d3.axisBottom(x).tickSize(0))
+                    .select(".domain").remove()
+
+                // Build Y scales and axis:
+                var y = d3.scaleBand()
+                    .range([height, 0])
+                    .domain(myVars)
+                    .padding(0.05);
+                svg.append("g")
+                    .style("font-size", 15)
+                    .call(d3.axisLeft(y).tickSize(0))
+                    .select(".domain").remove()
+
+                // Build color scale
+                var myColor = d3.scaleSequential()
+                    .interpolator(d3.interpolateInferno)
+                    .domain([-1, 1])
+                d => scale(d.sentiment);
+
+                // create a tooltip
+                var tooltip = d3.select(`#svg-container-${svgId}`)
+                    .append(`div`)
+                    .style("opacity", 0)
+                    .attr("class", "tooltip")
+                    .style("background-color", "white")
+                    .style("border", "solid")
+                    .style("border-width", "2px")
+                    .style("border-radius", "5px")
+                    .style("padding", "5px");
+
+                // Three function that change the tooltip when user hover / move / leave a cell
+                var mouseover = function(d) {
+                    tooltip
+                        .style("opacity", 1)
+                    d3.select(this)
+                        .style("stroke", "black")
+                        .style("opacity", 1);
+                }
+
+                var mousemove = function(d) {
+                    tooltip
+                        .html(JSON.stringify(d))
+                        .style("left", (d3.mouse(this)[0] + 70) + "px")
+                        .style("top", (d3.mouse(this)[1]) + "px");
+                }
+
+                var mouseleave = function(d) {
+                    tooltip
+                        .style("opacity", 0)
+                    d3.select(this)
+                        .style("stroke", "none")
+                        .style("opacity", 0.8)
+                }
+
+                // add the squares
+                svg.selectAll()
+                    .data(data, function(d) {
+                        return d.fromId + ':' + d.toId;
+                    })
+                    .enter()
+                    .append("rect")
+                    .attr("id", function(d) {
+                        return `hm${d.fromId}`;
+                    })
+                    .attr("x", function(d) {
+                        return x(d.fromId)
+                    })
+                    .attr("y", function(d) {
+                        return y(d.toId)
+                    })
+                    .attr("rx", 4)
+                    .attr("ry", 4)
+                    .attr("width", x.bandwidth())
+                    .attr("height", y.bandwidth())
+                    .on("mouseover", mouseover)
+                    .on("mousemove", mousemove)
+                    .on("mouseleave", mouseleave)
+                    .style("fill", function(d) {
+                        return myColor(d.sentiment)
+                    })
+                    .style("stroke-width", 4)
+                    .style("stroke", "none")
+                    .style("opacity", 0.8)
+            })
+
+            // Add title to graph
+            svg.append("text")
+                .attr("x", 0)
+                .attr("y", -50)
+                .attr("text-anchor", "left")
+                .style("font-size", "22px")
+                .text("Sentiment Index per E-mail");
+
+            // Add subtitle to graph
+            svg.append("text")
+                .attr("x", 0)
+                .attr("y", -20)
+                .attr("text-anchor", "left")
+                .style("font-size", "14px")
+                .style("fill", "grey")
+                .style("max-width", 400)
+                .text("With respect to company Enron");
+
+
         }
-
-        // add the squares
-        svg.selectAll()
-          .data(data, function (d) {
-            return d.fromId + ':' + d.toId;
-          })
-          .enter()
-          .append("rect")
-          .attr("id", function (d) {
-            return `hm${d.fromId}`;
-          })
-          .attr("x", function (d) {
-            return x(d.fromId)
-          })
-          .attr("y", function (d) {
-            return y(d.toId)
-          })
-          .attr("rx", 4)
-          .attr("ry", 4)
-          .attr("width", x.bandwidth())
-          .attr("height", y.bandwidth())
-          .on("mouseover", mouseover)
-          .on("mousemove", mousemove)
-          .on("mouseleave", mouseleave)
-          .style("fill", function (d) {
-            return myColor(d.sentiment)
-          })
-          .style("stroke-width", 4)
-          .style("stroke", "none")
-          .style("opacity", 0.8)
-      })
-
-      // Add title to graph
-      svg.append("text")
-        .attr("x", 0)
-        .attr("y", -50)
-        .attr("text-anchor", "left")
-        .style("font-size", "22px")
-        .text("Sentiment Index per E-mail");
-
-      // Add subtitle to graph
-      svg.append("text")
-        .attr("x", 0)
-        .attr("y", -20)
-        .attr("text-anchor", "left")
-        .style("font-size", "14px")
-        .style("fill", "grey")
-        .style("max-width", 400)
-        .text("With respect to company Enron");
-
-
-    }
-    // Update input label after uploading file
-    let fileInput = document.getElementById("csv-file")
-    fileInput.addEventListener("change", (e) => {
-      // Get file path
-      const url = e.target.value;
-      // Set label text
-      document.getElementById("inputLabel").innerText = url.slice(url.lastIndexOf("\\") + 1, url.length);
-    })
-  </script>
+    </script>
 
 
 </body>
