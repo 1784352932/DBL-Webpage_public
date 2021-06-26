@@ -2,95 +2,9 @@
 
 <head>
   <meta charset="utf-8">
-
-  <style>
-    .container {
-      display: flex;
-      justify-content: space-evenly;
-    }
-
-    .selection-container {
-      display: flex;
-      justify-content: space-evenly;
-    }
-
-    .horizontal_div {
-      width: 800px;
-      height: 800px;
-      border: 1px black;
-      background: white;
-      margin: 5px;
-    }
-
-    .links line {
-      stroke: #999;
-      stroke-opacity: 0.6;
-      stroke-width: 2px;
-    }
-
-    .nodes circle {
-      stroke: #fff;
-      stroke-width: 1.5px;
-    }
-
-    text {
-      font-family: sans-serif;
-      font-size: 10px;
-    }
-
-
-    .highcharts-figure,
-    .highcharts-data-table table {
-      min-width: 320px;
-      max-width: 800px;
-      margin: 1em auto;
-    }
-
-    .highcharts-data-table table {
-      font-family: Verdana, sans-serif;
-      border-collapse: collapse;
-      border: 1px solid #EBEBEB;
-      margin: 10px auto;
-      text-align: center;
-      width: 100%;
-      max-width: 500px;
-    }
-
-    .highcharts-data-table caption {
-      padding: 1em 0;
-      font-size: 1.2em;
-      color: #555;
-    }
-
-    .highcharts-data-table th {
-      font-weight: 600;
-      padding: 0.5em;
-    }
-
-    .highcharts-data-table td,
-    .highcharts-data-table th,
-    .highcharts-data-table caption {
-      padding: 0.5em;
-    }
-
-    .highcharts-data-table thead tr,
-    .highcharts-data-table tr:nth-child(even) {
-      background: #f8f8f8;
-    }
-
-    .highcharts-data-table tr:hover {
-      background: #f1f7ff;
-    }
-
-
-    input[type="number"] {
-      min-width: 50px;
-    }
-
-    .highcharts-credits {
-      display: hidden !important;
-    }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">    </title>
+  <link rel="stylesheet" href="./main.css">
+  
 
   <!-- dependencies for front-end visualization -->
 
@@ -110,38 +24,56 @@
     DBL-Webtech Group 12BC Visualizations
   </title>
 
-  <header>
-    <h1 style="text-align:center; font-size: 300%; color: crimson;"> Visualizations </h1>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./Base.html">DBL-Webtech</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./Base.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="AQ.html">Visualizations</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#video">Video</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <main>
-    <div>
-      <a href="/" target="_blank">
-        <h1 style="font-size: 100%; color: rgb(8, 8, 8); padding-left: 1.5em;"> <b> Home Page </b></h1>
-      </a>
-      <p style="text-align: center;">
-        {{message}}
+  
+  <main style="background-image: url('../assets/background-6228032_1920.jpg');" class="w-md-75 mx-auto pt-2 white-text">
+    <header>
+      <h1 class="text-center text-warning mt-3"> Visualizations </h1>
+    </header>
+    <div class="mb-5 text-center w-25 mx-auto">
+      <p class="fs-5">
+        Select a dataset file and visualization type
       </p>
-      <form class="" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data" ;
-        style="text-align: center;">
-        <input type="file" id='csv-file' name="csvfile" value="" ; style="text-align:center">
-        <input type="submit" name="" value="Submit" ; style="text-align: center;">
+      <form class="d-flex flex-column mt-5" id="upload-form" action="javascript:void(0);" method="post" enctype="multipart/form-data">
+        <label id="inputLabel" class="upload-btn mb-2" for="csv-file">
+          Upload a file
+        </label>
+        <input class="d-none " type="file" id='csv-file' name="csvfile" value="">
+        <button class="btn btn-primary" type="submit">Submit</button>
       </form>
     </div>
-    </br>
-    </br>
-    <div class="selection-container" style="padding-left: 1em;">
-
-      <select class="form-select" aria-label="Default select example" id="selection-1"
+    <div class="selection-container  w-50 mx-auto">
+      <select class="form-select me-4" aria-label="Default select example" id="selection-1"
         onchange="EraseVisualizations(1); displayVisualization(this.value, '1');">
-        <option selected>Please choose a visualization to be displayed</option>
+        <option selected>Choose a visualization</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
         <option value="3">Heat Map</option>
       </select>
-      <select class="form-select-2" aria-label="Default select example" id="selection-2"
+      <select class="form-select " aria-label="Default select example" id="selection-2"
         onchange="EraseVisualizations(2); displayVisualization(this.value, '2');">
-        <option selected>Please choose a visualization to be displayed</option>
+        <option selected>Choose a visualization</option>
         <option value="1">Pie Chart</option>
         <option value="2">Force Directed Graph</option>
         <option value="3">Heat Map</option>
@@ -153,7 +85,7 @@
     </br>
     <div class="container">
 
-      <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+      <div class="visualization-container" id="horizontal_div">
         <div class="highcharts-figure" id='highcharts-fig-1'>
           <div id="container-1"></div>
           <p class="highcharts-description">
@@ -167,7 +99,7 @@
           </div>
         </div>
       </div>
-      <div style="width: 800px;height: 1000px;border:1px solid #000; text-align: center;" ; id="horizontal_div">
+      <div class="visualization-container" id="horizontal_div">
         <div class="highcharts-figure" id='highcharts-fig-2'>
           <div id="container-2"></div>
           <p class="highcharts-description">
@@ -679,6 +611,14 @@
 
 
     }
+    // Update input label after uploading file
+    let fileInput = document.getElementById("csv-file")
+    fileInput.addEventListener("change", (e) => {
+      // Get file path
+      const url = e.target.value;
+      // Set label text
+      document.getElementById("inputLabel").innerText = url.slice(url.lastIndexOf("\\") + 1, url.length);
+    })
   </script>
 
 
